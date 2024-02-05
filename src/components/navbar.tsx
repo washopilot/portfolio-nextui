@@ -18,7 +18,15 @@ import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import NextLink from 'next/link'
 
-import { DiscordIcon, GithubIcon, HeartFilledIcon, LogoOnly, LogoText, SearchIcon, TwitterIcon } from '@/components/icons'
+import {
+    DiscordIcon,
+    GithubIcon,
+    HeartFilledIcon,
+    LogoOnly,
+    LogoText,
+    SearchIcon,
+    TwitterIcon
+} from '@/components/icons'
 import { ThemeSwitch } from '@/components/theme-switch'
 
 export const Navbar = () => {
@@ -47,7 +55,7 @@ export const Navbar = () => {
                 <NavbarBrand as='li' className='gap-3 max-w-fit'>
                     <NextLink className='flex justify-start items-center gap-1' href='/'>
                         <LogoOnly />
-						<LogoText/>
+                        <LogoText />
                         {/* <p className='font-bold tracking-tighter text-inherit'>FERNANDO CHICAIZA</p> */}
                     </NextLink>
                 </NavbarBrand>
