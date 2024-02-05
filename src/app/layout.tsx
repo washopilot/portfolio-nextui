@@ -1,11 +1,12 @@
-import '@/styles/globals.css'
-import { Metadata } from 'next'
-import { siteConfig } from '@/config/site'
-import { fontSans } from '@/config/fonts'
-import { Providers } from './providers'
 import { Navbar } from '@/components/navbar'
+import { fontSans } from '@/config/fonts'
+import { siteConfig } from '@/config/site'
+import '@/styles/globals.css'
 import { Link } from '@nextui-org/link'
 import clsx from 'clsx'
+import type { Viewport } from 'next'
+import { Metadata } from 'next'
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
     title: {
@@ -13,15 +14,18 @@ export const metadata: Metadata = {
         template: `%s - ${siteConfig.name}`
     },
     description: siteConfig.description,
-    // themeColor: [
-    //     { media: '(prefers-color-scheme: light)', color: 'white' },
-    //     { media: '(prefers-color-scheme: dark)', color: 'black' }
-    // ],
     icons: {
         icon: '/favicon.ico',
         shortcut: '/favicon-16x16.png',
         apple: '/apple-touch-icon.png'
     }
+}
+
+export const viewport: Viewport = {
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: 'white' },
+        { media: '(prefers-color-scheme: dark)', color: 'black' }
+    ]
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
