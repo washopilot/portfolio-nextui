@@ -37,13 +37,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <div className='relative flex flex-col h-screen'>
                         <Navbar />
                         <main className='container mx-auto max-w-7xl pt-16 px-6 flex-grow'>{children}</main>
-                        <footer className='w-full flex items-center justify-center py-3'>
+                        <footer className='w-full flex flex-col items-center justify-center py-3 leading-3'>
+                            <p className='text-default-600'>©2024 Todos los derechos reservados</p>
                             <Link
                                 isExternal
                                 className='flex items-center gap-1 text-current'
                                 href='https://nextui-docs-v2.vercel.app?utm_source=next-app-template'
                                 title='nextui.org homepage'>
-                                <span className='text-default-600'>Powered by</span>
+                                <span className='text-default-600'>Impulsado por</span>
                                 <p className='text-primary'>NextUI</p>
                             </Link>
                         </footer>
