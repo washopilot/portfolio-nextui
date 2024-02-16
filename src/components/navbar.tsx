@@ -18,15 +18,8 @@ import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import NextLink from 'next/link'
 
-import {
-    DiscordIcon,
-    GithubIcon,
-    HeartFilledIcon,
-    LogoOnly,
-    LogoText,
-    SearchIcon,
-    TwitterIcon
-} from '@/components/icons'
+import { DiscordIcon, GithubIcon, HeartFilledIcon, SearchIcon, TwitterIcon } from '@/components/icons'
+import Logo from '@/components/logo'
 import { ThemeSwitch } from '@/components/theme-switch'
 
 export const Navbar = () => {
@@ -53,11 +46,7 @@ export const Navbar = () => {
         <NextUINavbar maxWidth='xl' position='sticky'>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
                 <NavbarBrand as='li' className='gap-3 max-w-fit'>
-                    <NextLink className='flex justify-start items-center gap-1' href='/'>
-                        <LogoOnly />
-                        <LogoText />
-                        {/* <p className='font-bold tracking-tighter text-inherit'>FERNANDO CHICAIZA</p> */}
-                    </NextLink>
+                    <Logo />
                 </NavbarBrand>
                 <ul className='hidden lg:flex gap-4 justify-start ml-2'>
                     {siteConfig.navItems.map((item) => (
