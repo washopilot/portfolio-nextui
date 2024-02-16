@@ -5,9 +5,6 @@ export default function Home() {
         <>
             <CustomSection />
             <CustomSection />
-            <CustomSection />
-            <CustomSection />
-            <CustomSection />
         </>
     )
 }

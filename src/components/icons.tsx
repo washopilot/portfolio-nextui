@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { IconSvgProps } from '@/types'
 
-export const LogoOnly: React.FC<IconSvgProps> = ({ size = 36, width, height, ...props }) => (
+export const LogoOnly: React.FC<IconSvgProps> = ({ size = 56, width, height, ...props }) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         height={size || height}
@@ -31,7 +31,7 @@ export const LogoOnly: React.FC<IconSvgProps> = ({ size = 36, width, height, ...
     </svg>
 )
 
-export const LogoText: React.FC<IconSvgProps> = ({ size = 120, width, height, ...props }) => (
+export const LogoText: React.FC<IconSvgProps> = ({ size = 140, width, height, ...props }) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         height={size || height}
