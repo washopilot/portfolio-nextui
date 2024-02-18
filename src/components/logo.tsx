@@ -6,7 +6,7 @@ import { LogoOnly, LogoText } from './icons'
 const Logo = () => {
     return (
         <motion.div
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}>
             <NextLink className='flex justify-start items-center gap-1' href='/'>
