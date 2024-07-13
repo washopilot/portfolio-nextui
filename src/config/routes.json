@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "key": "inicio",
+            "title": "Inicio",
+            "keywords": "home, index",
+            "path": "/"
+        },
+        {
+            "key": "acerca",
+            "title": "Acerca de",
+            "keywords": "about, info",
+            "path": "/acerca"
+        }
+    ]
+}
