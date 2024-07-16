@@ -21,9 +21,9 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang='en' className='dark'>
+        <html suppressHydrationWarning lang='en'>
             <body className={inter.variable}>
-                <Providers>
+                <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     {children}
                 </Providers>
