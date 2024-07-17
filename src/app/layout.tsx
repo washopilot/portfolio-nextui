@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
     return (
         <html suppressHydrationWarning lang='en'>
-            <body className={inter.variable}>
+            <body className={inter.className}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     {children}
