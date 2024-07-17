@@ -38,6 +38,7 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
         if (isMenuOpen) {
             setIsMenuOpen(false)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname])
 
     return (

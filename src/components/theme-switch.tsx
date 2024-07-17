@@ -21,8 +21,8 @@ export const ThemeSwitch = ({ className, classNames }: ThemeSwitchProps) => {
     }
 
     const { Component, slots, isSelected, getBaseProps, getInputProps, getWrapperProps } = useSwitch({
-        isSelected: theme === 'light',
-        'aria-label': `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`,
+        isSelected: theme === 'light' || isSSR,
+        'aria-label': `Switch to ${theme === 'light' || isSSR ? 'dark' : 'light'} mode`,
         onChange
     })
 
