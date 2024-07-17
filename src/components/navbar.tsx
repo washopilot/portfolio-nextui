@@ -9,6 +9,8 @@ import {
     NavbarBrand,
     NavbarContent,
     NavbarItem,
+    NavbarMenu,
+    NavbarMenuItem,
     NavbarMenuToggle,
     Navbar as NextUINavbar
 } from '@nextui-org/react'
@@ -63,30 +65,26 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
 
                 <ul className='hidden lg:flex gap-4 justify-start items-center'>
                     <NavbarItem>
-                        <NextLink
-                            className={navLinkClasses}
-                            color='foreground'
-                            data-active={includes(pathname, 'components')}
-                            href='/docs/components/avatar'>
-                            Components
+                        <NextLink className={navLinkClasses} color='foreground' data-active={pathname == '/'} href='/'>
+                            Inicio
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
                         <NextLink
                             className={navLinkClasses}
                             color='foreground'
-                            data-active={includes(pathname, 'blog')}
-                            href='/blog'>
-                            Blog
+                            data-active={includes(pathname, 'about')}
+                            href='/about'>
+                            Acerca
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
                         <NextLink
                             className={navLinkClasses}
                             color='foreground'
-                            data-active={includes(pathname, 'figma')}
-                            href='/figma'>
-                            Figma
+                            data-active={includes(pathname, 'projects')}
+                            href='/projects'>
+                            Proyectos
                         </NextLink>
                     </NavbarItem>
                 </ul>
@@ -127,6 +125,20 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
                     className='hidden sm:flex lg:hidden ml-4'
                 />
             </NavbarContent>
+
+            <NavbarMenu>
+                {routes.map((item, index) => (
+                    <NavbarMenuItem key={`${item}-${index}`}>
+                        <Link
+                            color={pathname === item.path ? 'primary' : 'foreground'}
+                            className='w-full'
+                            href={item.path}
+                            size='lg'>
+                            {item.title}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
         </NextUINavbar>
     )
 }

@@ -11,6 +11,12 @@
             "title": "Acerca de",
             "keywords": "about, info",
             "path": "/acerca"
+        },
+        {
+            "key": "proyectos",
+            "title": "Proyectos",
+            "keywords": "projects, works",
+            "path": "/proyectos"
         }
     ]
 }
