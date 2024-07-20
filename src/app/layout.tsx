@@ -2,6 +2,7 @@ import { Providers } from '@/app/provider'
 import { inter } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
+import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Navbar } from '../components/navbar'
 import './globals.css'
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
     return (
         <html suppressHydrationWarning lang='en'>
-            <body className={inter.className}>
+            <body className={clsx('min-h-screen bg-background text-foreground antialiased', inter.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     {children}
