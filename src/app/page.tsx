@@ -1,5 +1,11 @@
-import { Button } from '@nextui-org/button'
+import Hero from '@/components/hero'
 
 export default function Home() {
-    return <Button>Botón en INICIO</Button>
+    return (
+        <main className='container mx-auto max-w-7xl px-6 flex-grow'>
+            <section className='flex flex-col items-center justify-center'>
+                <Hero />
+            </section>
+        </main>
+    )
 }
