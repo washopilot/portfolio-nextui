@@ -53,17 +53,17 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
             position='sticky'
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
-                <NavbarBrand as='li' className='gap-3 max-w-fit'>
+                <NavbarBrand className='gap-3 max-w-fit'>
                     <NextLink
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'
                         href='/'>
-                        <SmallLogo className='w-6 h-6 md:hidden' />
-                        <LargeLogo className='hidden md:block h-5 md:h-6' />
+                        <SmallLogo className='w-12 h-auto md:hidden' />
+                        <LargeLogo className='hidden md:block h-5 md:h-14 w-auto' />
                     </NextLink>
                 </NavbarBrand>
 
-                <ul className='hidden lg:flex gap-4 justify-start items-center'>
+                <ul className='hidden lg:flex gap-4 justify-start items-center px-2'>
                     <NavbarItem>
                         <NextLink className={navLinkClasses} color='foreground' data-active={pathname == '/'} href='/'>
                             Inicio
