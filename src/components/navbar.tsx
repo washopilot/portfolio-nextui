@@ -34,7 +34,11 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
     const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false)
 
     const pathname = usePathname()
-    const navLinkClasses = clsx(link({ color: 'foreground' }), 'data-[active=true]:text-primary')
+    const navLinkClasses = clsx(
+        link({ color: 'foreground' }),
+        'data-[active=true]:text-primary',
+        'relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+    )
 
     useEffect(() => {
         if (isMenuOpen) {
@@ -131,7 +135,7 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
                             color={pathname === item.path ? 'primary' : 'foreground'}
-                            className='w-full'
+                            className='w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
                             href={item.path}
                             size='lg'>
                             {item.title}
