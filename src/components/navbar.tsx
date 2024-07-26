@@ -57,7 +57,7 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
             position='sticky'
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
-                <NavbarBrand className='gap-3 max-w-fit'>
+                <NavbarBrand className='gap-3 max-w-fit transition-all duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_hsl(var(--nextui-foreground))]'>
                     <NextLink
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'

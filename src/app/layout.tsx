@@ -24,7 +24,7 @@ export default function RootLayout({
     return (
         <html suppressHydrationWarning lang='en'>
             <body className={clsx('min-h-screen bg-background text-foreground antialiased', inter.className)}>
-                <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
+                <Providers themeProps={{ attribute: 'class', defaultTheme: 'light', children }}>
                     <Navbar routes={manifest.routes} />
                     {children}
                 </Providers>
