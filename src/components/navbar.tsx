@@ -53,7 +53,7 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
                 'z-[100001]': isMenuOpen
             })}
             isMenuOpen={isMenuOpen}
-            maxWidth='xl'
+            maxWidth='lg'
             position='sticky'
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>

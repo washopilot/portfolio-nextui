@@ -28,7 +28,7 @@ export default function RootLayout({
             <body className={clsx('min-h-screen bg-background text-foreground antialiased', inter.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'light', children }}>
                     <Navbar routes={manifest.routes} />
-                    <main className='container mx-auto max-w-7xl px-6 flex flex-col justify-center'>
+                    <main className='container mx-auto max-w-8xl px-6 flex flex-col justify-center'>
                         <section className='md:w-1/2 w-4/5 pt-5 self-center'>
                             <Hero />
                         </section>
