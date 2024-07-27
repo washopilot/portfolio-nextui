@@ -18,16 +18,13 @@ declare global {
 }
 const Hero = () => {
     return (
-        <Card
-            isFooterBlurred
-            radius='lg'
-            className='relative border-none h-96 hover:drop-shadow-[0_6px_6px_hsl(var(--nextui-foreground))]'
-            shadow='none'>
+        <Card isFooterBlurred radius='lg' className='relative h-72' shadow='lg'>
             <Suspense
                 fallback={
                     <Spinner
                         label='Cargando...'
-                        className='absolute inset-0 flex items-center justify-center scale-[2]'
+                        className='absolute inset-0 flex items-center justify-center'
+                        size='lg'
                     />
                 }>
                 <Canvas shadows gl={{ antialias: false }}>
@@ -46,7 +43,7 @@ const Hero = () => {
                         <unrealBloomPass threshold={1} strength={1.0} radius={0.5} />
                     </Effects>
                     <BakeShadows />
-                    <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={50} />
+                    <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={40} />
                     <OrbitControls autoRotate enableZoom={true} />
                 </Canvas>
             </Suspense>

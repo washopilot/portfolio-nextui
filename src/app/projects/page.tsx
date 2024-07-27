@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button'
 
 export default function Home() {
-    return <Button>Botón en PROYECTOS</Button>
+    return <Button size='lg'>Botón en PROYECTOS</Button>
 }
