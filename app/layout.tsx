@@ -1,7 +1,7 @@
 import Hero from '@/components/hero'
 import Navbar from '@/components/navbar'
 import PageTransition from '@/components/page-transitions'
-import { inter } from '@/config/fonts'
+import { recursive } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
     return (
         <html suppressHydrationWarning lang='en'>
-            <body className={clsx('min-h-screen bg-background text-foreground antialiased', inter.className)}>
+            <body className={clsx('min-h-screen bg-background text-foreground antialiased', recursive.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'light', children }}>
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-8xl px-6 flex flex-col justify-center'>

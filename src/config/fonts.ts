@@ -1,7 +1,7 @@
-import { Inter } from 'next/font/google'
+import { Recursive } from 'next/font/google'
 
-export const inter = Inter({
-    variable: '--font-inter',
+export const recursive = Recursive({
+    variable: '--font-recursive',
     adjustFontFallback: true,
     display: 'optional',
     fallback: [

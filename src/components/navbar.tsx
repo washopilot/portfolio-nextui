@@ -36,8 +36,8 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
     const pathname = usePathname()
     const navLinkClasses = clsx(
         link({ color: 'foreground' }),
-        'data-[active=true]:text-primary',
-        'relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+        'data-[active=true]:text-danger',
+        'font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
     )
 
     useEffect(() => {
@@ -52,6 +52,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
             className={clsx({
                 'z-[100001]': isMenuOpen
             })}
+            isBordered
             isMenuOpen={isMenuOpen}
             maxWidth='lg'
             position='sticky'
@@ -134,8 +135,8 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                 {routes.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
-                            color={pathname === item.path ? 'primary' : 'foreground'}
-                            className='w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+                            color={pathname === item.path ? 'danger' : 'foreground'}
+                            className='font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
                             href={item.path}
                             size='lg'>
                             {item.title}

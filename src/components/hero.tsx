@@ -47,8 +47,10 @@ const Hero = () => {
                     <OrbitControls autoRotate enableZoom={true} />
                 </Canvas>
             </Suspense>
-            <CardFooter className='justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10'>
-                <p className='text-tiny text-white/80'>Bloom - React Three Fiber</p>
+            <CardFooter className='absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100'>
+                <div>
+                    <p className='text-tiny text-white/60 font-bold'>Bloom - GLTFLoader</p>
+                </div>
             </CardFooter>
         </Card>
     )
