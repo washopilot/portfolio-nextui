@@ -47,9 +47,6 @@ importers:
       three:
         specifier: 0.167.0
         version: 0.167.0
-      three-stdlib:
-        specifier: 2.30.5
-        version: 2.30.5(three@0.167.0)
     devDependencies:
       '@types/lodash':
         specifier: 4.17.7
