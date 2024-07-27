@@ -1,13 +1,13 @@
-import { Providers } from '@/app/provider'
 import Hero from '@/components/hero'
+import Navbar from '@/components/navbar'
 import PageTransition from '@/components/page-transitions'
 import { inter } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { Navbar } from '../components/navbar'
 import './globals.css'
+import { Providers } from './provider'
 
 export const metadata: Metadata = {
     title: siteConfig.name,

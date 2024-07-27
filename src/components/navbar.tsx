@@ -30,7 +30,7 @@ export interface NavbarProps {
     children?: ReactNode
 }
 
-export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps) => {
+const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false)
 
     const pathname = usePathname()
@@ -146,3 +146,5 @@ export const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: Navba
         </NextUINavbar>
     )
 }
+
+export default Navbar
