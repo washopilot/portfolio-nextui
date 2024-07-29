@@ -1,6 +1,5 @@
 import Hero from '@/components/hero'
 import Navbar from '@/components/navbar'
-import PageTransition from '@/components/page-transitions'
 import { recursive } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
@@ -31,7 +30,7 @@ export default function RootLayout({
                     <main className='container mx-auto max-w-8xl px-6 flex flex-col justify-center'>
                         <section className='md:w-1/2 w-4/5 pt-5 self-center'>
                             <Hero />
-                            <PageTransition>{children}</PageTransition>
+                            {children}
                         </section>
                     </main>
                 </Providers>
