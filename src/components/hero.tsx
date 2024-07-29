@@ -3,9 +3,9 @@
 import { Card } from '@nextui-org/card'
 import { CardFooter, Spinner } from '@nextui-org/react'
 import { BakeShadows, Effects, OrbitControls, OrthographicCamera } from '@react-three/drei'
-import { Canvas, extend, ReactThreeFiber } from '@react-three/fiber'
+import { Canvas, ReactThreeFiber, extend } from '@react-three/fiber'
 import { Suspense } from 'react'
-import { UnrealBloomPass } from 'three/examples/jsm/Addons.js'
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import { Tower } from './tower'
 
 extend({ UnrealBloomPass })

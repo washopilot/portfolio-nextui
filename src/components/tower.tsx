@@ -1,6 +1,6 @@
 import { Sparkles, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
-import { GLTF } from 'three/examples/jsm/Addons.js'
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 const glowRed = new THREE.MeshBasicMaterial({ color: new THREE.Color(7, 0, 0.5), toneMapped: false })
 const glowBlue = new THREE.MeshBasicMaterial({ color: new THREE.Color(0, 0.5, 20), toneMapped: false })
