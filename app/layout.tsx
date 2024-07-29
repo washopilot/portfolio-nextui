@@ -26,13 +26,13 @@ export default function RootLayout({
     return (
         <html suppressHydrationWarning lang='en'>
             <body className={clsx('min-h-screen bg-background text-foreground antialiased', recursive.className)}>
-                <Providers themeProps={{ attribute: 'class', defaultTheme: 'light', children }}>
+                <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-8xl px-6 flex flex-col justify-center'>
                         <section className='md:w-1/2 w-4/5 pt-5 self-center'>
                             <Hero />
+                            <PageTransition>{children}</PageTransition>
                         </section>
-                        <PageTransition>{children}</PageTransition>
                     </main>
                 </Providers>
             </body>
