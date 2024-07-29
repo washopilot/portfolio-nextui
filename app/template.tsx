@@ -20,8 +20,7 @@ const Template = ({ children }: { children: React.ReactNode }) => {
                 animate='enter'
                 exit='exit'
                 variants={variants}
-                transition={{ type: 'spring', duration: 0.6 }}
-                className='md:w-1/2 w-4/5 pt-5 self-center'>
+                transition={{ type: 'spring', duration: 0.6 }}>
                 {children}
             </motion.section>
         </AnimatePresence>

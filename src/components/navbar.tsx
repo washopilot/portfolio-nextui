@@ -36,8 +36,8 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
     const pathname = usePathname()
     const navLinkClasses = clsx(
         link({ color: 'foreground' }),
-        'data-[active=true]:text-danger',
-        'font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+        'data-[active=true]:text-danger data-[active=true]:font-bold data-[active=true]:after:scale-x-100',
+        'font-normal relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
     )
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'
                         href='/'>
-                        <SmallLogo className='w-12 h-auto md:hidden' />
+                        <LargeLogo className='w-auto h-10 md:hidden' />
                         <LargeLogo className='hidden md:block h-5 md:h-14 w-auto' />
                     </NextLink>
                 </NavbarBrand>

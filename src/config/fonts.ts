@@ -9,19 +9,19 @@ export const recursive = Recursive({
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
-        '"Segoe UI"',
+        'Segoe UI',
         'Roboto',
-        '"Helvetica Neue"',
+        'Helvetica Neue',
         'Arial',
-        '"Noto Sans"',
+        'Noto Sans',
         'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji'
     ],
     preload: true,
     style: 'normal',
     subsets: ['latin'],
-    weight: ['400', '500', '700']
+    weight: ['300', '400', '500', '700']
 })
