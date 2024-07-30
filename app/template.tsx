@@ -13,7 +13,7 @@ const Template = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname()
 
     return (
-        <AnimatePresence mode='wait' initial={false}>
+        <AnimatePresence mode='wait'>
             <motion.section
                 key={pathname}
                 initial='hidden'
