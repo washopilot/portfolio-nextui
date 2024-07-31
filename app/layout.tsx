@@ -1,4 +1,4 @@
-import Hero from '@/components/hero'
+import Hero from '@/components/home/hero'
 import Navbar from '@/components/navbar'
 import { recursive } from '@/config/fonts'
 import manifest from '@/config/routes.json'

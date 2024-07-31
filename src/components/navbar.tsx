@@ -19,7 +19,7 @@ import { includes } from 'lodash'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode, useEffect, useState } from 'react'
-import { LargeLogo, SmallLogo } from './logo'
+import { LargeLogo, SmallLogo } from './home/logo'
 import { ThemeSwitch } from './theme-switch'
 
 export interface NavbarProps {
