@@ -1,4 +1,5 @@
 import Hero from '@/components/home/hero'
+import { SmallLogo } from '@/components/home/logo'
 import Navbar from '@/components/navbar'
 import { recursive } from '@/config/fonts'
 import manifest from '@/config/routes.json'
@@ -26,16 +27,19 @@ export default function RootLayout({
 }>) {
     const BackgroundSVG = () => {
         return (
-            <div className='fixed -bottom-1/4 -left-1/3 w-full h-full overflow-hidden -z-10 scale-[2]'>
-                <Image
-                    src={backgroundLeftSVG}
-                    alt='Background'
-                    fill
-                    sizes='10vw'
-                    quality={100}
-                    className='object-contain'
-                />
-            </div>
+            <>
+                <div className='fixed -bottom-1/4 -left-1/3 w-full h-full overflow-hidden z-[-1] scale-[2]'>
+                    <Image
+                        src={backgroundLeftSVG}
+                        alt='Background'
+                        fill
+                        sizes='10vw'
+                        quality={100}
+                        className='object-contain'
+                    />
+                </div>
+                <SmallLogo className='fixed z-[-1] w-[40vw] h-auto -top-[10vh] -right-[10vw] text-secondary-100 blur-sm opacity-60' />
+            </>
         )
     }
 

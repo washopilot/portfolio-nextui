@@ -4,7 +4,6 @@ import { GithubIcon, TwitterIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
 import { Route } from '@/libs/page'
 import {
-    link,
     Link,
     NavbarBrand,
     NavbarContent,
@@ -12,14 +11,15 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
-    Navbar as NextUINavbar
+    Navbar as NextUINavbar,
+    link
 } from '@nextui-org/react'
 import { clsx } from 'clsx'
 import { includes } from 'lodash'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode, useEffect, useState } from 'react'
-import { LargeLogo, SmallLogo } from './home/logo'
+import { LargeLogo } from './home/logo'
 import { ThemeSwitch } from './theme-switch'
 
 export interface NavbarProps {
@@ -64,7 +64,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'
                         href='/'>
                         <LargeLogo className='w-auto h-10 md:hidden' />
-                        <LargeLogo className='hidden md:block h-5 md:h-14 w-auto' />
+                        <LargeLogo className='hidden md:block h-5 md:h-12 w-auto' />
                     </NextLink>
                 </NavbarBrand>
 
@@ -131,12 +131,12 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                 />
             </NavbarContent>
 
-            <NavbarMenu>
+            <NavbarMenu className='pt-4'>
                 {routes.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
                             color={pathname === item.path ? 'danger' : 'foreground'}
-                            className='font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+                            className='pt-1 font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
                             href={item.path}
                             size='lg'>
                             {item.title}
