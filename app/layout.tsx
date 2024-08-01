@@ -26,12 +26,12 @@ export default function RootLayout({
 }>) {
     const BackgroundSVG = () => {
         return (
-            <div className='fixed -bottom-1/4 -left-1/3 w-full h-full overflow-hidden -z-1 scale-[2]'>
+            <div className='fixed -bottom-1/4 -left-1/3 w-full h-full overflow-hidden -z-10 scale-[2]'>
                 <Image
                     src={backgroundLeftSVG}
                     alt='Background'
                     fill
-                    sizes='100vw'
+                    sizes='10vw'
                     quality={100}
                     className='object-contain'
                 />
@@ -41,7 +41,7 @@ export default function RootLayout({
 
     return (
         <html suppressHydrationWarning lang='en'>
-            <body className={clsx('min-h-screen bg-background text-foreground antialiased', recursive.className)}>
+            <body className={clsx('min-h-screen text-foreground antialiased', recursive.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-3xl px-6 flex flex-col justify-center'>
