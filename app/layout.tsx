@@ -5,6 +5,8 @@ import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import backgroundLeftSVG from '../public/gradients/bg-left.svg'
 import './globals.css'
 import { Providers } from './provider'
 
@@ -22,6 +24,21 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    const BackgroundSVG = () => {
+        return (
+            <div className='fixed -bottom-1/4 -left-1/3 w-full h-full overflow-hidden -z-1 scale-[2]'>
+                <Image
+                    src={backgroundLeftSVG}
+                    alt='Background'
+                    fill
+                    sizes='100vw'
+                    quality={100}
+                    className='object-contain'
+                />
+            </div>
+        )
+    }
+
     return (
         <html suppressHydrationWarning lang='en'>
             <body className={clsx('min-h-screen bg-background text-foreground antialiased', recursive.className)}>
@@ -31,6 +48,7 @@ export default function RootLayout({
                         <Hero />
                         {children}
                     </main>
+                    <BackgroundSVG />
                 </Providers>
             </body>
         </html>
