@@ -5,11 +5,10 @@ const Bio = () => {
                 Acerca de
             </h3>
             <p className='text-normal font-light'>
-                Soy un desarrollador full-stack freelance radicado en Loja, Ecuador. Con una profunda pasión por la
-                tecnología y la creación de soluciones digitales innovadoras, me especializo en el desarrollo integral
-                de servicios digitales, abarcando desde la conceptualización y el diseño hasta la implementación y
-                optimización. Mi enfoque se centra en resolver problemas reales mediante soluciones adecuadas,
-                utilizando mi experiencia en programación para construir sistemas eficientes y efectivos.
+                Soy un desarrollador full-stack freelance radicado en Loja, Ecuador. Apasionado por la tecnología y la
+                creación de soluciones digitales innovadoras, me especializo en el desarrollo integral de servicios
+                digitales, desde la conceptualización y el diseño hasta la implementación y optimización, enfocándome en
+                resolver problemas reales a través de mi experiencia en la programación.
             </p>
         </article>
     )
