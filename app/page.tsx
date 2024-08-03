@@ -8,9 +8,11 @@ const Home = () => {
     return (
         <>
             <Profile profilePic={profilePic} title='Fernando Chicaiza' subtitle='Desarrollador / Artista / Diseñador' />
-            <article className='flex w-full pt-16 flex-wrap gap-2 sm:gap-6 md:gap-x-10 text-justify hyphens-auto leading-normal'>
+            <article className='flex w-full pt-16 flex-col gap-2 sm:gap-6 md:gap-x-10 text-justify hyphens-auto leading-normal'>
                 <Bio />
-                <Spacer y={24} />
+                <Spacer y={3} />
+                <Action />
+                <Action />
                 <Action />
             </article>
         </>

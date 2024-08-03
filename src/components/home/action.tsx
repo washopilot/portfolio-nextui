@@ -8,10 +8,10 @@ const Action = () => {
     const router = useRouter()
     return (
         <Button
-            className='w-1/2 m-auto bg-secondary-50 text-secondary-700'
+            className='m-auto bg-secondary-50 text-secondary-700 px-16'
             color='secondary'
             size='lg'
-            endContent={<BxRightArrowCircleIcon size={48} />}
+            endContent={<BxRightArrowCircleIcon size={'2em'} />}
             onClick={() => router.push('/projects')}
             variant='faded'>
             Mi Portafolio

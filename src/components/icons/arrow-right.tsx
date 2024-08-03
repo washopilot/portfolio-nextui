@@ -1,6 +1,6 @@
 import { IconSvgProps } from '@/types'
 
-export const BxRightArrowCircleIcon = ({ size = 24, width, height, ...props }: IconSvgProps) => {
+export const BxRightArrowCircleIcon = ({ size = '1em', width, height, ...props }: IconSvgProps) => {
     return (
         <svg
             fill='currentColor'
