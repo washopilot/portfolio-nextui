@@ -1,6 +1,6 @@
 const Bio = () => {
     return (
-        <article className='flex w-full pt-16 items-center flex-wrap gap-2 sm:gap-6 md:gap-x-10 text-justify hyphens-auto leading-normal'>
+        <>
             <h3 className='text-2xl font-bold underline underline-offset-8 decoration-danger-300 decoration-4'>
                 Sobre mí
             </h3>
@@ -10,7 +10,7 @@ const Bio = () => {
                 desde su conceptualización y diseño hasta la implementación y optimización, enfocándome en resolver
                 problemas reales a través de la programación.
             </p>
-        </article>
+        </>
     )
 }
 

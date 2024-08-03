@@ -1,12 +1,18 @@
+import Action from '@/components/home/action'
 import Bio from '@/components/home/bio'
 import Profile from '@/components/home/profile'
+import { Spacer } from '@nextui-org/react'
 import profilePic from '../public/profile.jpg'
 
 const Home = () => {
     return (
         <>
             <Profile profilePic={profilePic} title='Fernando Chicaiza' subtitle='Desarrollador / Artista / Diseñador' />
-            <Bio />
+            <article className='flex w-full pt-16 flex-wrap gap-2 sm:gap-6 md:gap-x-10 text-justify hyphens-auto leading-normal'>
+                <Bio />
+                <Spacer y={24} />
+                <Action />
+            </article>
         </>
     )
 }

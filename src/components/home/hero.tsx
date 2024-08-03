@@ -28,7 +28,7 @@ const Hero = () => {
                             size='lg'
                         />
                     }>
-                    {/* <Canvas shadows gl={{ antialias: false }}>
+                    <Canvas shadows gl={{ antialias: false }}>
                         <color attach='background' args={['#202030']} />
                         <fog attach='fog' args={['#202030', 10, 25]} />
                         <hemisphereLight intensity={0.2} color='#eaeaea' groundColor='blue' />
@@ -46,7 +46,7 @@ const Hero = () => {
                         <BakeShadows />
                         <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={40} />
                         <OrbitControls autoRotate enableZoom={true} />
-                    </Canvas> */}
+                    </Canvas>
                 </Suspense>
                 <CardFooter className='absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100'>
                     <div>
