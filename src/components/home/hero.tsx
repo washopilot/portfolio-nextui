@@ -19,7 +19,7 @@ declare global {
 const Hero = () => {
     return (
         <section className='md:w-2/3 w-4/5 pt-5 self-center'>
-            <Card isFooterBlurred radius='lg' className='relative h-72' shadow='lg'>
+            <Card isFooterBlurred radius='lg' className='relative h-72 bg-secondary-50' shadow='lg'>
                 <Suspense
                     fallback={
                         <Spinner
