@@ -8,7 +8,7 @@ const CTAButton = () => {
     const router = useRouter()
     return (
         <Button
-            className='m-auto bg-secondary-50 text-secondary-700 px-16 border border-foreground-500 rounded-small '
+            className='m-auto bg-secondary-800 text-content1 px-16 border border-foreground-500 rounded-medium'
             color='secondary'
             size='lg'
             endContent={<BxRightArrowCircleIcon size={'2em'} />}
