@@ -41,10 +41,10 @@ const Hero = () => {
                         />
                         <Tower position={[0, -3.25, 0]} />
                         <Effects disableGamma>
-                            <unrealBloomPass threshold={1} strength={1.0} radius={0.5} />
+                            <unrealBloomPass threshold={0.1} strength={0.4} radius={0.1} />
                         </Effects>
                         <BakeShadows />
-                        <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={40} />
+                        <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={35} />
                         <OrbitControls autoRotate enableZoom={true} />
                     </Canvas>
                 </Suspense>
