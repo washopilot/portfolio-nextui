@@ -1,7 +1,7 @@
-import { Recursive } from 'next/font/google'
+import { Raleway as Google_Font } from 'next/font/google'
 
-export const recursive = Recursive({
-    variable: '--font-recursive',
+export const google_font = Google_Font({
+    variable: '--font-google-font',
     adjustFontFallback: true,
     display: 'optional',
     fallback: [
@@ -21,7 +21,7 @@ export const recursive = Recursive({
         'Noto Color Emoji'
     ],
     preload: true,
-    style: 'normal',
+    style: ['normal', 'italic'],
     subsets: ['latin'],
-    weight: ['300', '400', '500', '700']
+    weight: ['300', '400', '700']
 })

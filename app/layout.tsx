@@ -1,7 +1,7 @@
 import BackgroundSVG from '@/components/bg-svg'
 import Hero from '@/components/home/hero'
 import Navbar from '@/components/navbar'
-import { recursive } from '@/config/fonts'
+import { google_font } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
     return (
         <html suppressHydrationWarning lang='en'>
-            <body className={clsx('min-h-screen  text-foreground antialiased', recursive.className)}>
+            <body className={clsx('min-h-screen text-foreground antialiased', google_font.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-3xl px-6 flex flex-col justify-center'>

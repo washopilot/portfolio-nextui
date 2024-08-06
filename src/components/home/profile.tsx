@@ -13,7 +13,7 @@ const Profile = ({
     <section className='flex w-full pt-5 justify-center items-center flex-wrap gap-4 sm:gap-12 md:gap-x-20'>
         <div>
             <h3 className='text-3xl font-bold'>{title}</h3>
-            <p className='text-small font-light'>{subtitle}</p>
+            <p className='text-small font-normal'>{subtitle}</p>
         </div>
         <NextImage
             sizes='30vw'
