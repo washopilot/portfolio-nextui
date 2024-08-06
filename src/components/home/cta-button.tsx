@@ -8,12 +8,12 @@ const CTAButton = () => {
     const router = useRouter()
     return (
         <Button
-            className='m-auto bg-secondary-800 text-content1 px-16 border border-foreground-500 rounded-medium'
+            className='m-auto bg-secondary-800 text-content1 font-bold px-16 border border-foreground-500 rounded-medium py-8'
             color='secondary'
             size='lg'
-            endContent={<BxRightArrowCircleIcon size={'2em'} />}
+            endContent={<BxRightArrowCircleIcon className='scale-[3]' />}
             onClick={() => router.push('/projects')}>
-            Mi Portafolio
+            Mi Portafolio&nbsp;&nbsp;&nbsp;
         </Button>
     )
 }
