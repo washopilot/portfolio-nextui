@@ -1,5 +1,6 @@
 import Paragraph from '@/components/home/paragraph'
 import Profile from '@/components/home/profile'
+import { Link } from '@nextui-org/react'
 import profilePic from '../../public/profile.jpg'
 
 export default function Home() {
@@ -11,8 +12,19 @@ export default function Home() {
                 creación de soluciones digitales, me especializo en el desarrollo integral de productos tecnológicos
                 desde su conceptualización y diseño hasta la implementación y optimización, enfocándome en resolver
                 problemas reales a través de la programación.
+                <Link
+                    isBlock
+                    showAnchorIcon
+                    isExternal
+                    href='/resume.pdf'
+                    className='font-bold italic text-secondary-500'>
+                    <span>&nbsp;... mi CV&nbsp;</span>
+                </Link>
             </Paragraph>
-            <Paragraph title='Destrezas y tecnologías'>React, Laravel, Blender, Three.js, Docker</Paragraph>
+            <Paragraph title='Destrezas y tecnologías'>
+                Node, React, Angular, Laravel, Blender, Three.js &amp; Docker
+            </Paragraph>
+            <Paragraph title='Lenguajes'>Javascript/Typescript, PHP &amp; Python</Paragraph>
         </article>
     )
 }
