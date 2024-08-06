@@ -1,5 +1,6 @@
 import Paragraph from '@/components/home/paragraph'
 import Profile from '@/components/home/profile'
+import { BxRightArrowIcon } from '@/components/icons/arrow-right'
 import { Link } from '@nextui-org/react'
 import profilePic from '../../public/profile.jpg'
 
@@ -17,8 +18,9 @@ export default function Home() {
                     showAnchorIcon
                     isExternal
                     href='/resume.pdf'
-                    className='font-bold italic text-secondary-500'>
-                    <span>&nbsp;... mi CV&nbsp;</span>
+                    className='font-bold italic text-secondary-500'
+                    anchorIcon={<BxRightArrowIcon className='inline scale-[3]' />}>
+                    <span>&nbsp;... mi CV&nbsp;&nbsp;</span>
                 </Link>
             </Paragraph>
             <Paragraph title='Destrezas y tecnologías'>

@@ -1,6 +1,6 @@
 import CTAButton from '@/components/home/cta-button'
 import Paragraph from '@/components/home/paragraph'
-import { BxRightArrowCircleIcon } from '@/components/icons/arrow-right'
+import { BxRightArrowIcon } from '@/components/icons/arrow-right'
 import { Link, Spacer } from '@nextui-org/react'
 import NextLink from 'next/link'
 
@@ -15,8 +15,8 @@ const Home = () => {
                     showAnchorIcon
                     href='/about'
                     className='text-lg font-bold italic text-secondary-500'
-                    anchorIcon={<BxRightArrowCircleIcon className='inline scale-[1.5]' />}>
-                    <span>&nbsp;... ¿quieres saber más?&nbsp;&nbsp;</span>
+                    anchorIcon={<BxRightArrowIcon className='inline scale-[3]' />}>
+                    <span>&nbsp;... ¿saber más?&nbsp;&nbsp;</span>
                 </Link>
             </Paragraph>
             <Spacer y={0} />
