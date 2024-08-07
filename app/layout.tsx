@@ -1,4 +1,5 @@
 import BackgroundSVG from '@/components/bg-svg'
+import { Footer } from '@/components/footer'
 import Hero from '@/components/home/hero'
 import Navbar from '@/components/navbar'
 import { google_font } from '@/config/fonts'
@@ -32,6 +33,7 @@ export default function RootLayout({
                         <Hero />
                         {children}
                     </main>
+                    <Footer />
                     <BackgroundSVG />
                 </Providers>
             </body>
