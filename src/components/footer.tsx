@@ -12,11 +12,11 @@ export const Footer = () => {
                 <p className='text-sm text-default-400'>© {getCurrentYear()} Fernando Chicaiza. All rights reserved.</p>
                 <p className='text-sm text-default-400'>
                     Con el soporte de
-                    <Link isExternal isBlock href='https://nextui.org'>
+                    <Link isExternal isBlock href='https://nextui.org' className='py-0'>
                         NextUI
                     </Link>
                     &amp;
-                    <Link isExternal isBlock href='https://nextjs.org'>
+                    <Link isExternal isBlock href='https://nextjs.org' className='py-0'>
                         Next.js
                     </Link>
                 </p>

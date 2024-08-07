@@ -15,8 +15,8 @@ const Home = () => {
                     showAnchorIcon
                     href='/about'
                     className='text-lg font-bold italic text-secondary-500'
-                    anchorIcon={<BxRightArrowIcon className='inline scale-[3]' />}>
-                    <span>&nbsp;... ¿saber más?&nbsp;&nbsp;</span>
+                    anchorIcon={<BxRightArrowIcon className='inline scale-[4]' />}>
+                    <span>&nbsp;... ¿saber más?&nbsp;&nbsp;&nbsp;</span>
                 </Link>
             </Paragraph>
             <Spacer y={0} />
