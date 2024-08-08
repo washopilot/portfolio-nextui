@@ -9,9 +9,9 @@ const CTAButton = () => {
         <Button
             as={NextLink}
             className='m-auto bg-secondary-800 text-content1 font-bold px-16 border border-foreground-500 rounded-medium py-6'
-            endContent={<BxRightArrowIcon className='scale-[5]' />}
+            endContent={<BxRightArrowIcon className='scale-[4]' />}
             href='/projects'>
-            MIS PROYECTOS&nbsp;&nbsp;&nbsp;
+            MIS PROYECTOS&nbsp;
         </Button>
     )
 }
