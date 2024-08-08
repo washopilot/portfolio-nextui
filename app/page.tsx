@@ -1,3 +1,5 @@
+'use client'
+
 import CTAButton from '@/components/home/cta-button'
 import Paragraph from '@/components/home/paragraph'
 import { BxRightArrowIcon } from '@/components/icons/arrow-right'
