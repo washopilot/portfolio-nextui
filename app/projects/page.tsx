@@ -1,8 +1,4 @@
 import Paragraph from '@/components/home/paragraph'
-import Profile from '@/components/home/profile'
-import { BxRightArrowIcon } from '@/components/icons/arrow-right'
-import { Link } from '@nextui-org/react'
-import profilePic from '../../public/profile.jpg'
 
 export default function Home() {
     return (
