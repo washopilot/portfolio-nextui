@@ -92,6 +92,15 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             Proyectos
                         </NextLink>
                     </NavbarItem>
+                    <NavbarItem>
+                        <Link
+                            className={navLinkClasses}
+                            color='foreground'
+                            isExternal
+                            href='https://github.com/washopilot/portfolio-nextui'>
+                            Fuente
+                        </Link>
+                    </NavbarItem>
                 </ul>
             </NavbarContent>
 
