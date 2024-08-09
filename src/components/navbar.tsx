@@ -94,11 +94,13 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                     </NavbarItem>
                     <NavbarItem>
                         <Link
+                            showAnchorIcon
+                            anchorIcon={<GithubIcon className='text-default-600 dark:text-default-500' />}
                             className={navLinkClasses}
                             color='foreground'
                             isExternal
                             href='https://github.com/washopilot/portfolio-nextui'>
-                            Fuente
+                            Fuente&nbsp;
                         </Link>
                     </NavbarItem>
                 </ul>
