@@ -1,3 +1,5 @@
+'use client'
+
 import { BxRightArrowIcon } from '@/components/icons/arrow-right'
 import { Button } from '@nextui-org/react'
 import NextLink from 'next/link'

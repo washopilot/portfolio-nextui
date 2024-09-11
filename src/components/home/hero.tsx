@@ -51,7 +51,7 @@ const Hero = () => {
                 <CardFooter className='absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100'>
                     <div>
                         <p className='text-tiny text-white/60 font-bold'>
-                            ReactThreeFiber - &nbsp;<span className='italic'>GLTFLoader & Unreal Bloom</span>
+                            Model by whnhyr - &nbsp;<span className='italic'>GLTFLoader & Unreal Bloom</span>
                         </p>
                     </div>
                 </CardFooter>
