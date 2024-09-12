@@ -30,7 +30,7 @@ export default function RootLayout({
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-3xl px-6 flex flex-col justify-center'>
-                        <Hero />
+                        {/* <Hero /> */}
                         {children}
                     </main>
                     <Footer />
