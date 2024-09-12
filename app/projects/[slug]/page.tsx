@@ -4,7 +4,7 @@ import { useMDXComponent } from 'next-contentlayer2/hooks'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-    console.log(allProjects)
+    // console.log(allProjects)
 
     return allProjects.map((project) => ({
         slug: project._raw.flattenedPath
