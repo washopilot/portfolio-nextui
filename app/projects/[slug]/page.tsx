@@ -22,9 +22,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const MDXContent = useMDXComponent(project.body.code)
 
     return (
-        <div>
+        <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-12 text-justify hyphens-auto leading-normal'>
             {/* Some code ... */}
             <MDXContent />
-        </div>
+        </article>
     )
 }

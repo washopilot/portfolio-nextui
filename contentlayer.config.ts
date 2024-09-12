@@ -7,7 +7,11 @@ export const Project = defineDocumentType(() => ({
     contentType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
-        date: { type: 'date', required: true }
+        description: { type: 'string', required: true },
+        date: { type: 'date', required: true },
+        draft: { type: 'boolean', required: false },
+        tags: { type: 'list', of: { type: 'string' } },
+        image: { type: 'string', required: false }
     },
     computedFields: {
         url: { type: 'string', resolve: (project) => `/projects/${project._raw.flattenedPath}` }
