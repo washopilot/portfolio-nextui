@@ -40,9 +40,9 @@ const Hero = () => {
                             position={[10, 10, -10]}
                         />
                         <Tower position={[0, -3.25, 0]} />
-                        <Effects disableGamma>
+                        {/* <Effects disableGamma>
                             <unrealBloomPass threshold={0.1} strength={0.4} radius={0.1} />
-                        </Effects>
+                        </Effects> */}
                         <BakeShadows />
                         <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={35} />
                         <OrbitControls autoRotate enableZoom={true} />
