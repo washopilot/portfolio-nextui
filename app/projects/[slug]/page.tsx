@@ -19,6 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     if (!project) notFound()
 
     // Parse the MDX file via the useMDXComponent hook.
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const MDXContent = useMDXComponent(project.body.code)
 
     return (
