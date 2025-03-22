@@ -1,5 +1,5 @@
 'use client'
-import { Link } from '@nextui-org/react'
+import { Link } from '@heroui/react'
 
 export const Footer = () => {
     const getCurrentYear = (): number => {
@@ -12,8 +12,8 @@ export const Footer = () => {
                 <p className='text-sm text-default-400'>© {getCurrentYear()} Fernando Chicaiza. Web Developer.</p>
                 <p className='text-sm text-default-400'>
                     Con el soporte de
-                    <Link isExternal isBlock href='https://nextui.org' className='py-0'>
-                        NextUI
+                    <Link isExternal isBlock href='https://www.heroui.com' className='py-0'>
+                        HeroUI
                     </Link>
                     &amp;
                     <Link isExternal isBlock href='https://nextjs.org' className='py-0'>

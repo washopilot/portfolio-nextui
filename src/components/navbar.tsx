@@ -13,7 +13,7 @@ import {
     NavbarMenuToggle,
     Navbar as NextUINavbar,
     link
-} from '@nextui-org/react'
+} from "@heroui/react"
 import { clsx } from 'clsx'
 import { includes } from 'lodash'
 import NextLink from 'next/link'
@@ -58,7 +58,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
             position='sticky'
             onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
-                <NavbarBrand className='gap-3 max-w-fit transition-all duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_hsl(var(--nextui-foreground))]'>
+                <NavbarBrand className='gap-3 max-w-fit transition-all duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_hsl(var(--heroui-foreground))]'>
                     <NextLink
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'

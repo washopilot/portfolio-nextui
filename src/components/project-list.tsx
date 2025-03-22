@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardBody, CardFooter, CardHeader, Image, Link } from '@nextui-org/react'
+import { Card, CardBody, CardFooter, CardHeader, Image, Link } from "@heroui/react"
 import { Project } from 'contentlayer/generated'
 
 import { format, parseISO } from 'date-fns'

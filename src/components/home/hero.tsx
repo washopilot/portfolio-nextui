@@ -1,7 +1,7 @@
 'use client'
 
-import { Card } from '@nextui-org/card'
-import { CardFooter, Spinner } from '@nextui-org/react'
+import { Card } from '@heroui/card'
+import { CardFooter, Spinner } from '@heroui/react'
 import { BakeShadows, Effects, OrbitControls, OrthographicCamera } from '@react-three/drei'
 import { Canvas, ReactThreeFiber, extend } from '@react-three/fiber'
 import { Suspense } from 'react'
