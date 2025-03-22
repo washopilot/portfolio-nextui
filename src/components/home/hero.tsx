@@ -45,7 +45,14 @@ const Hero = () => {
                         </Effects> */}
                         <BakeShadows />
                         <OrthographicCamera makeDefault far={100} near={0.1} position={[-10, 2, -10]} zoom={35} />
-                        <OrbitControls autoRotate enableZoom={true} />
+                        <OrbitControls
+                            autoRotate
+                            enableZoom
+                            minPolarAngle={1.3}
+                            maxPolarAngle={1.55}
+                            minZoom={35}
+                            maxZoom={80}
+                        />
                     </Canvas>
                 </Suspense>
                 <CardFooter className='absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100'>
