@@ -1,5 +1,3 @@
-'use client'
-
 import Paragraph from '@/components/home/paragraph'
 import Profile from '@/components/home/profile'
 import { BxRightArrowIcon } from '@/components/icons/arrow-right'
