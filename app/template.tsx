@@ -5,9 +5,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const variants = {
-    hidden: { opacity: 0, x: -200 },
-    enter: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 200 }
+    hidden: { opacity: 0, x: -50 },
+    enter: { opacity: 1, x: 0 }
 }
 
 const Template = ({ children }: { children: React.ReactNode }) => {
@@ -24,9 +23,8 @@ const Template = ({ children }: { children: React.ReactNode }) => {
                 key={pathname}
                 initial='hidden'
                 animate='enter'
-                exit='exit'
                 variants={variants}
-                transition={{ type: 'spring', duration: 0.6 }}>
+                transition={{ type: 'spring', duration: 0.5 }}>
                 {children}
             </motion.section>
         </AnimatePresence>
