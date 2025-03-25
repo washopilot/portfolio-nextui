@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const variants = {
     hidden: { opacity: 0, x: -200 },
@@ -11,8 +12,13 @@ const variants = {
 
 const Template = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname()
+    const [isClient, setIsClient] = useState(false)
 
-    return (
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
+
+    return isClient ? (
         <AnimatePresence mode='wait' initial={true}>
             <motion.section
                 key={pathname}
@@ -24,6 +30,8 @@ const Template = ({ children }: { children: React.ReactNode }) => {
                 {children}
             </motion.section>
         </AnimatePresence>
+    ) : (
+        <section>{children}</section>
     )
 }
 
