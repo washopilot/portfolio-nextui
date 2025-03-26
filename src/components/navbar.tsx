@@ -13,7 +13,7 @@ import {
     NavbarMenuToggle,
     Navbar as NextUINavbar,
     link
-} from "@heroui/react"
+} from '@heroui/react'
 import { clsx } from 'clsx'
 import { includes } from 'lodash'
 import NextLink from 'next/link'

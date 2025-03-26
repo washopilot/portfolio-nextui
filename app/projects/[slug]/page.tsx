@@ -15,10 +15,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     const project = allProjects.find((project) => project._raw.flattenedPath === params.slug)
     if (!project) notFound()
 
+    // console.log(project)
+
     return (
         <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-12 text-justify hyphens-auto leading-normal'>
             {/* Some code ... */}
-            <ProjectBreadcrum />
+            <ProjectBreadcrum projectTitle={project.title} />
             <MDXContent code={project.body.code} components={mdxComponents} />
         </article>
     )
