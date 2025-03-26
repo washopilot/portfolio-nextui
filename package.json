@@ -52,8 +52,5 @@
             "protobufjs",
             "sharp"
         ]
-    },
-    "engines": {
-        "pnpm": ">=10.6.5"
     }
 }
