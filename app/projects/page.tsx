@@ -2,7 +2,7 @@ import { ProjectList } from '@/components/project-list'
 import { allProjects } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 
-export default function Home() {
+export default function ProjectsPage() {
     const projects = allProjects
         .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
         ?.filter((post) => {

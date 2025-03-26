@@ -4,7 +4,7 @@ import { BxRightArrowIcon } from '@/components/icons/arrow-right'
 import { Link, Spacer } from '@heroui/react'
 import NextLink from 'next/link'
 
-const Home = () => {
+export default function HomePage() {
     return (
         <article className='flex w-full pt-16 flex-col gap-8 sm:gap-8 md:gap-x-10 text-justify hyphens-auto leading-normal'>
             <Paragraph title='Hola, mi nombre es FERNANDO'>
@@ -24,5 +24,3 @@ const Home = () => {
         </article>
     )
 }
-
-export default Home
