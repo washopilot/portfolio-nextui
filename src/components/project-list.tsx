@@ -25,7 +25,14 @@ const ProjectCard = (project: Project) => {
                 </Link>
             </CardHeader>
             <CardBody className='pt-0 px-2 pb-1'>
-                <Image className='mb-4' src={project.image} alt='alt' />
+                {project.image ? (
+                    <Image
+                        className='mb-4 w-full object-cover object-top h-44'
+                        width={'100%'}
+                        src={project.image}
+                        alt='alt'
+                    />
+                ) : null}
                 <p className='font-normal w-full text-default-600 text-sm'>{project.description}</p>
             </CardBody>
         </Card>
@@ -34,7 +41,7 @@ const ProjectCard = (project: Project) => {
 
 export const ProjectList = ({ projects }: { projects: Project[] }) => {
     return (
-        <div className='mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
+        <div className='mt-10 mx-10 grid gap-6 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
             {projects.map((project, idx) => (
                 <ProjectCard key={idx} {...project} />
             ))}
