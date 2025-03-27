@@ -14,8 +14,8 @@
         "@heroui/react": "2.7.5",
         "@react-aria/ssr": "3.9.7",
         "@react-aria/visually-hidden": "3.8.21",
-        "@react-three/drei": "9.114.0",
-        "@react-three/fiber": "8.17.9",
+        "@react-three/drei": "9.122",
+        "@react-three/fiber": "8.18.0",
         "clsx": "2.1.1",
         "contentlayer2": "0.5.4",
         "date-fns": "4.1.0",
@@ -27,14 +27,14 @@
         "react": "18.3.1",
         "react-dom": "18.3.1",
         "sharp": "0.33.5",
-        "three": "0.169.0"
+        "three": "0.174.0"
     },
     "devDependencies": {
         "@types/lodash": "4.17.9",
         "@types/node": "22.7.4",
         "@types/react": "18.3.10",
         "@types/react-dom": "18.3.0",
-        "@types/three": "0.169.0",
+        "@types/three": "0.174.0",
         "eslint": "8.57.1",
         "eslint-config-next": "14.2.26",
         "postcss": "8.5.3",

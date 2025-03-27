@@ -3,12 +3,11 @@
 import { Card } from '@heroui/card'
 import { CardFooter, Spinner } from '@heroui/react'
 import { BakeShadows, Effects, OrbitControls, OrthographicCamera } from '@react-three/drei'
-import { Canvas, ReactThreeFiber, extend } from '@react-three/fiber'
+import { Canvas, extend, ReactThreeFiber } from '@react-three/fiber'
 import { Suspense } from 'react'
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
+import { UnrealBloomPass } from 'three/addons/Addons.js'
 import { Tower } from './tower'
 
-extend({ UnrealBloomPass })
 declare global {
     namespace JSX {
         interface IntrinsicElements {
@@ -16,6 +15,8 @@ declare global {
         }
     }
 }
+extend({ UnrealBloomPass })
+
 const Hero = () => {
     return (
         <section className='md:w-2/3 w-4/5 pt-5 self-center'>
