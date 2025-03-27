@@ -1,14 +1,8 @@
 'use client'
 
-import { Card, CardBody, CardFooter, CardHeader, Image, Link } from '@heroui/react'
+import { Card, CardBody, CardHeader, Image, Link } from '@heroui/react'
 import { Project } from 'contentlayer/generated'
-
-import { format, parseISO } from 'date-fns'
-import NextLink from 'next/link'
 import { useRouter } from 'next/navigation'
-
-// import { useIsMounted } from '@/hooks/use-is-mounted'
-// import { trackEvent } from '@/utils/va'
 
 const ProjectCard = (project: Project) => {
     const router = useRouter()
@@ -20,35 +14,20 @@ const ProjectCard = (project: Project) => {
 
     return (
         <Card
-            suppressHydrationWarning
+            suppressHydrationWarning={true}
             isBlurred
-            // as={NextLink}
             className='p-2 h-full border-transparent text-start bg-white/5 dark:bg-default-400/10 backdrop-blur-lg backdrop-saturate-[1.8]'
-            // href={project.url}
             isPressable={!!project.url}
             onPress={handlePress}>
             <CardHeader>
-                <Link
-                    as={NextLink}
-                    className='font-semibold '
-                    href={project.url}
-                    size='lg'
-                    underline='hover'
-                    onPress={handlePress}>
+                <Link className='text-secondary-500 font-semibold ' href={project.url} size='lg' underline='hover'>
                     {project.title}
                 </Link>
             </CardHeader>
             <CardBody className='pt-0 px-2 pb-1'>
                 <Image className='mb-4' src={project.image} alt='alt' />
-                <p className='font-normal w-full text-default-600'>{project.description}</p>
+                <p className='font-normal w-full text-default-600 text-sm'>{project.description}</p>
             </CardBody>
-            <CardFooter className='flex justify-between items-center'>
-                <time className='block text-small text-default-500' dateTime={project.date}>
-                    {format(parseISO(project.date), 'LLLL d, yyyy')}
-                    {project?.draft && ' (Draft)'}
-                </time>
-                {/* <Avatar size='sm' src={project.author?.avatar} /> */}
-            </CardFooter>
         </Card>
     )
 }

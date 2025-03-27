@@ -9,6 +9,7 @@ export const Project = defineDocumentType(() => ({
         title: { type: 'string', required: true },
         description: { type: 'string', required: true },
         date: { type: 'date', required: true },
+        year: { type: 'string', required: false },
         draft: { type: 'boolean', required: false },
         tags: { type: 'list', of: { type: 'string' } },
         image: { type: 'string', required: false }
