@@ -12,7 +12,7 @@ export default function ProjectBreadcrum({
     projectYear?: string
 }) {
     const navLinkClasses = clsx(
-        'text-danger font-normal relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[3px] after:bg-danger after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+        'text-danger font-bold relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[3px] after:bg-danger after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
     )
     return (
         <Breadcrumbs>

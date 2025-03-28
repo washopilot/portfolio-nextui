@@ -1,3 +1,4 @@
+import Paragraph from '@/components/home/paragraph'
 import { ProjectList } from '@/components/project-list'
 import { allProjects } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
@@ -14,7 +15,8 @@ export default function ProjectsPage() {
         })
 
     return (
-        <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-12 text-justify hyphens-auto leading-normal'>
+        <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-8 text-justify hyphens-auto leading-normal'>
+            <Paragraph title='Proyectos' />
             <ProjectList projects={projects} />
         </article>
     )
