@@ -1,6 +1,5 @@
 import CTAButton from '@/components/home/cta-button'
 import Paragraph from '@/components/home/paragraph'
-import { BxRightArrowIcon } from '@/components/icons/arrow-right'
 import { Link, Spacer } from '@heroui/react'
 import NextLink from 'next/link'
 
@@ -14,9 +13,8 @@ export default function HomePage() {
                     isBlock
                     showAnchorIcon
                     href='/about'
-                    className='text-lg font-bold italic text-secondary-500'
-                    anchorIcon={<BxRightArrowIcon className='inline scale-[3]' />}>
-                    <span>&nbsp;... ¿saber más?&nbsp;&nbsp;</span>
+                    className='text-lg font-bold italic text-secondary-500'>
+                    <span>&nbsp;... ¿saber más?</span>
                 </Link>
             </Paragraph>
             <Spacer y={0} />

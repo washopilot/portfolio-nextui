@@ -18,9 +18,8 @@ export default function AboutPage() {
                     showAnchorIcon
                     isExternal
                     href='/resume.pdf'
-                    className='font-bold italic text-secondary-500'
-                    anchorIcon={<BxRightArrowIcon className='inline scale-[3]' />}>
-                    <span>&nbsp;... mi CV&nbsp;&nbsp;</span>
+                    className='font-bold italic text-secondary-500'>
+                    <span>&nbsp;... mi CV</span>
                 </Link>
             </Paragraph>
             <Paragraph title='Destrezas y tecnologías'>
