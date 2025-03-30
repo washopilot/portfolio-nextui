@@ -1,11 +1,7 @@
 import { Chip, Link } from '@heroui/react'
 
 const CustomChip = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <Chip classNames={{ base: 'border-warning-500 rounded-md text-warning-500' }} variant='bordered'>
-            {children}
-        </Chip>
-    )
+    return <Chip classNames={{ base: 'rounded-md text-warning-600' }}>{children}</Chip>
 }
 
 const CustomLink = ({ children, href }: { children: React.ReactNode; href: string }) => {

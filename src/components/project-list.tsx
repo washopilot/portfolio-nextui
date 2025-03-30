@@ -25,6 +25,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         if (project.url) router.push(project.url)
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const onMouseMove = useCallback(
         throttle((e: MouseEvent<HTMLDivElement>) => {
             const card = e.currentTarget
@@ -82,7 +83,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 // Component for the project list
 export const ProjectList = ({ projects }: { projects: Project[] }) => {
     return (
-        <div className='mt-0 mx-10 grid gap-6 grid-cols-[repeat(auto-fill,minmax(13em,1fr))]'>
+        <div className='mt-0 mx-0 sm:mx-12 grid gap-6 grid-cols-[repeat(auto-fill,minmax(13em,1fr))]'>
             {projects.map((project, idx) => (
                 <ProjectCard key={idx} project={project} />
             ))}

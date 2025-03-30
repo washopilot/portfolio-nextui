@@ -18,7 +18,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     // console.log(project)
 
     return (
-        <article className='flex w-full pt-16 flex-col gap-4 sm:gap-4 md:gap-6 text-justify hyphens-auto leading-normal'>
+        <article className='flex text-sm max-w-lg mx-auto pt-16 flex-col gap-4 sm:gap-4 md:gap-6 text-justify hyphens-auto leading-normal'>
             <ProjectBreadcrum projectTitle={project.title} projectYear={project.year} />
             <MDXContent code={project.body.code} components={mdxComponents} />
         </article>
