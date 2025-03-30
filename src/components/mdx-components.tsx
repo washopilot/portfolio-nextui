@@ -23,7 +23,7 @@ const CustomLi = ({ children }: { children: React.ReactNode }) => {
 const mdxComponents = {
     Chip,
     CustomChip,
-    CustomLink,
+    a: CustomLink,
     li: CustomLi
 }
 
