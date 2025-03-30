@@ -1,4 +1,4 @@
-import { Chip, Link } from '@heroui/react'
+import { Chip, Image, Link } from '@heroui/react'
 
 const CustomChip = ({ children }: { children: React.ReactNode }) => {
     return <Chip classNames={{ base: 'rounded-md text-warning-600' }}>{children}</Chip>
@@ -12,15 +12,26 @@ const CustomLink = ({ children, href }: { children: React.ReactNode; href: strin
     )
 }
 
+const CustomImage = ({ src, alt }: { src?: string; alt?: string }) => {
+    if (!src) return null
+
+    return <Image src={src} alt={alt} radius='lg' className='my-4 w-full' width={'100%'} />
+}
+
 const CustomLi = ({ children }: { children: React.ReactNode }) => {
     return <li className='my-1'>{children}</li>
 }
 
+const CustomP = ({ children }: { children: React.ReactNode }) => {
+    return <div>{children}</div>
+}
+
 const mdxComponents = {
-    Chip,
     CustomChip,
     a: CustomLink,
-    li: CustomLi
+    img: CustomImage,
+    li: CustomLi,
+    p: CustomP
 }
 
 export default mdxComponents
