@@ -100,7 +100,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             color='foreground'
                             isExternal
                             href='https://github.com/washopilot/portfolio-nextui'>
-                            Fuente&nbsp;
+                            Código&nbsp;
                         </Link>
                     </NavbarItem>
                 </ul>
