@@ -1,6 +1,6 @@
 'use client'
 
-import { GithubIcon, TwitterIcon } from '@/components/icons'
+import { GithubIcon, XIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
 import { Route } from '@/libs/page'
 import {
@@ -124,10 +124,10 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
             </NavbarContent>
 
             <NavbarContent className='hidden sm:flex basis-1/5 sm:basis-full' justify='end'>
-                <NavbarItem className='hidden sm:flex'></NavbarItem>
+                {/* <NavbarItem className='hidden sm:flex'></NavbarItem> */}
                 <NavbarItem className='hidden sm:flex'>
-                    <Link isExternal aria-label='Twitter' className='p-1' href={siteConfig.links.twitter}>
-                        <TwitterIcon className='text-default-600 dark:text-default-500' />
+                    <Link isExternal aria-label='X' className='p-1' href={siteConfig.links.twitter}>
+                        <XIcon className='text-default-600 dark:text-default-500' />
                     </Link>
                     <Link isExternal aria-label='Github' className='p-1' href={siteConfig.links.github}>
                         <GithubIcon className='text-default-600 dark:text-default-500' />
