@@ -32,8 +32,8 @@ export default function AboutPage() {
                 </Link>
             </Paragraph>
             <Paragraph title='Destrezas y tecnologías'>
-                JavaScript / TypeScript React / React Native / Next.js Vue.js / Nuxt Laravel / PHP / MySQL HTML5 / CSS /
-                Tailwind / Diseño Responsive & Mobile-First
+                JavaScript / TypeScript / React / React Native / Next.js / Vue.js / Nuxt / Laravel / PHP / MySQL / HTML5
+                / CSS / Tailwind / Diseño Responsive & Mobile-First
             </Paragraph>
             <Paragraph title='Lenguajes'>Javascript/Typescript, PHP &amp; Python</Paragraph>
         </article>
