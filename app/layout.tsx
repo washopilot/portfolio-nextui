@@ -7,7 +7,7 @@ import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import '@/../app/globals.css'
+import './globals.css'
 import { Providers } from './provider'
 
 export const metadata: Metadata = {
