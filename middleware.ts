@@ -16,6 +16,7 @@ function getLocale(request: NextRequest): string | undefined {
     let languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales)
 
     const locale = matchLocale(languages, locales, i18n.defaultLocale)
+    console.count(locale)
 
     return locale
 }

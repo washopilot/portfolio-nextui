@@ -20,6 +20,7 @@ import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode, useEffect, useState } from 'react'
 import { LargeLogo } from './home/logo'
+import { LanguageSwitch } from './language-switch'
 import { ThemeSwitch } from './theme-switch'
 
 export interface NavbarProps {
@@ -114,6 +115,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                 </NavbarItem>
                 <NavbarItem className='flex h-full items-center'>
                     <ThemeSwitch />
+                    <LanguageSwitch />
                 </NavbarItem>
                 <NavbarItem className='w-10 h-full'>
                     <NavbarMenuToggle
@@ -133,6 +135,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                         <GithubIcon className='text-default-600 dark:text-default-500' />
                     </Link>
                     <ThemeSwitch />
+                    <LanguageSwitch />
                 </NavbarItem>
 
                 {/* <NavbarItem className='hidden lg:flex'>{searchButton}</NavbarItem> */}

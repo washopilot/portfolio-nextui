@@ -1,8 +1,8 @@
 'use client'
 
 import { MoonFilledIcon, SunFilledIcon } from '@/components/icons'
-import { SwitchProps, useSwitch } from "@heroui/react"
-import { clsx } from "@heroui/shared-utils"
+import { SwitchProps, useSwitch } from '@heroui/react'
+import { clsx } from '@heroui/shared-utils'
 import { useIsSSR } from '@react-aria/ssr'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 import { useTheme } from 'next-themes'
