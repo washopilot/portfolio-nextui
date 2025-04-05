@@ -1,12 +1,13 @@
 import CTAButton from '@/components/home/cta-button'
 import Paragraph from '@/components/home/paragraph'
+import { getDictionary } from '@/get-dictionaries'
+import { Locale } from '@/i18n-config'
 import { Link, Spacer } from '@heroui/react'
 import NextLink from 'next/link'
-import { getDictionary } from './dictionaries'
 
-export default async function HomePage({ params }: { params: { lang: string } }) {
-    const dict = await getDictionary(params.lang) // en
-    console.log('Params:', params)
+export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
+    const dict = await getDictionary(lang) // en
+    console.log('Params:', { lang })
     console.log('Dictionary:', dict)
 
     return (
