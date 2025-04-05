@@ -26,12 +26,8 @@ export function middleware(request: NextRequest) {
     // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
     // // If you have one
     if (
-        [
-            '/manifest.json',
-            '/favicon.ico',
-            '/123-transformed.glb'
-            // Your other files in `public`
-        ].includes(pathname)
+        ['/manifest.json', '/favicon.ico', '/123-transformed.glb', '/resume.pdf'].includes(pathname) ||
+        pathname.startsWith('/works/')
     )
         return
 

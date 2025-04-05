@@ -7,8 +7,8 @@ import NextLink from 'next/link'
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
     const dict = await getDictionary(lang) // en
-    console.log('Params:', { lang })
-    console.log('Dictionary:', dict)
+    // console.log('Params:', lang)
+    // console.log('Dictionary:', dict)
 
     return (
         <article className='flex w-full pt-16 flex-col gap-8 sm:gap-8 md:gap-x-10 text-justify hyphens-auto leading-normal'>
