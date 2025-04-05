@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar'
 import { google_font } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
+import { i18n, type Locale } from '@/i18n-config'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import './globals.css'
@@ -19,13 +20,21 @@ export const metadata: Metadata = {
     }
 }
 
-export default function RootLayout({
-    children
-}: Readonly<{
+export async function generateStaticParams() {
+    return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
+export default async function RootLayout({
+    children,
+    params
+}: {
     children: React.ReactNode
-}>) {
+    params: Promise<{ lang: Locale }>
+}) {
+    const { lang } = await params
+
     return (
-        <html suppressHydrationWarning>
+        <html suppressHydrationWarning lang={lang}>
             <body className={clsx('min-h-screen text-foreground antialiased select-none', google_font.className)}>
                 <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark', children }}>
                     <Navbar routes={manifest.routes} />
