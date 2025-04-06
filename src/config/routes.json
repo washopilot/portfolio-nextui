@@ -1,22 +1,38 @@
 {
-    "routes": [
-        {
-            "key": "inicio",
-            "title": "Inicio",
-            "keywords": "home, index",
-            "path": "/"
-        },
-        {
-            "key": "acerca",
-            "title": "Acerca de",
-            "keywords": "about, info",
-            "path": "/about"
-        },
-        {
-            "key": "proyectos",
-            "title": "Proyectos",
-            "keywords": "projects, works",
-            "path": "/projects"
-        }
-    ]
+    "routes": {
+        "es": [
+            {
+                "key": "home",
+                "title": "Inicio",
+                "path": "/"
+            },
+            {
+                "key": "about",
+                "title": "Acerca de",
+                "path": "/acerca"
+            },
+            {
+                "key": "projects",
+                "title": "Proyectos",
+                "path": "/proyectos"
+            }
+        ],
+        "en": [
+            {
+                "key": "home",
+                "title": "Home",
+                "path": "/"
+            },
+            {
+                "key": "about",
+                "title": "About",
+                "path": "/about"
+            },
+            {
+                "key": "projects",
+                "title": "Projects",
+                "path": "/projects"
+            }
+        ]
+    }
 }

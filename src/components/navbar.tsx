@@ -2,7 +2,7 @@
 
 import { GithubIcon, XIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
-import { Route } from '@/libs/page'
+import { Route, RoutesByLanguage } from '@/libs/page'
 import { getLocaleFromPath } from '@/utils' // Import the utility function
 import {
     Link,
@@ -25,20 +25,25 @@ import { LanguageSwitch } from './language-switch'
 import { ThemeSwitch } from './theme-switch'
 
 export interface NavbarProps {
-    routes: Route[]
-    mobileRoutes?: Route[]
+    routes: RoutesByLanguage['routes']
+    mobileRoutes?: RoutesByLanguage['routes']
     tag?: string
     slug?: string
     children?: ReactNode
 }
 
 const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps) => {
+    console.log('routes', routes)
+
     const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false)
 
     // --- Get current locale from pathname ---
     const pathname = usePathname()
     const currentLocale = getLocaleFromPath(pathname)
     // --- End get current locale ---
+
+    console.log('currentLocale', currentLocale)
+
     const navLinkClasses = clsx(
         link({ color: 'foreground' }),
         'data-[active=true]:text-danger data-[active=true]:font-bold data-[active=true]:after:scale-x-100',
@@ -156,7 +161,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                 />
             </NavbarContent>
 
-            <NavbarMenu className='pt-4'>
+            {/* <NavbarMenu className='pt-4'>
                 {routes.map(
                     (item, index) =>
                         item.path && ( // Check if item.path exists
@@ -172,7 +177,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             </NavbarMenuItem>
                         )
                 )}
-            </NavbarMenu>
+            </NavbarMenu> */}
         </NextUINavbar>
     )
 }
