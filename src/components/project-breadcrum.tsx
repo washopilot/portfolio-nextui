@@ -1,6 +1,6 @@
 'use client'
 
-import { i18n, Locale } from '@/i18n-config' // Import i18n and Locale
+import { getLocaleFromPath } from '@/utils' // Import the utility function
 import { BreadcrumbItem, Breadcrumbs, Chip } from '@heroui/react'
 import clsx from 'clsx'
 import NextLink from 'next/link'
@@ -15,10 +15,6 @@ export default function ProjectBreadcrum({
 }) {
     // --- Get current locale from pathname ---
     const pathname = usePathname()
-    const getLocaleFromPath = (path: string): Locale => {
-        const segments = path.split('/')
-        return (i18n.locales.includes(segments[1] as Locale) ? segments[1] : i18n.defaultLocale) as Locale
-    }
     const currentLocale = getLocaleFromPath(pathname)
     // --- End get current locale ---
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { i18n, Locale } from '@/i18n-config' // Import i18n and Locale
+import { getLocaleFromPath } from '@/utils' // Import the utility function
 import { Card, CardBody, CardHeader, Image, Link } from '@heroui/react'
 import { Project } from 'contentlayer/generated'
 import { usePathname, useRouter } from 'next/navigation' // Import usePathname
@@ -24,10 +24,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
     const pathname = usePathname() // Get pathname
 
     // --- Get current locale from pathname ---
-    const getLocaleFromPath = (path: string): Locale => {
-        const segments = path.split('/')
-        return (i18n.locales.includes(segments[1] as Locale) ? segments[1] : i18n.defaultLocale) as Locale
-    }
     const currentLocale = getLocaleFromPath(pathname)
     // --- End get current locale ---
 
