@@ -27,13 +27,10 @@ import { ThemeSwitch } from './theme-switch'
 export interface NavbarProps {
     routes: RoutesByLanguage['routes']
     mobileRoutes?: RoutesByLanguage['routes']
-    tag?: string
-    slug?: string
-    children?: ReactNode
 }
 
-const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps) => {
-    console.log('routes', routes)
+const Navbar = ({ routes }: NavbarProps) => {
+    // console.log('routes', routes)
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false)
 
@@ -42,7 +39,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
     const currentLocale = getLocaleFromPath(pathname)
     // --- End get current locale ---
 
-    console.log('currentLocale', currentLocale)
+    // console.log('currentLocale', currentLocale)
 
     const navLinkClasses = clsx(
         link({ color: 'foreground' }),
@@ -86,7 +83,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             color='foreground'
                             data-active={pathname === `/${currentLocale}`}
                             href={`/${currentLocale}`}>
-                            Inicio
+                            {routes[currentLocale].find((route) => route.key === 'home')?.title}
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
@@ -96,7 +93,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             data-active={includes(pathname, 'about')}
                             href={`/${currentLocale}/about`}>
                             {/* Add locale */}
-                            Acerca {/* TODO: Use dictionary */}
+                            {routes[currentLocale].find((route) => route.key === 'about')?.title}
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
@@ -106,7 +103,7 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             data-active={includes(pathname, 'projects')}
                             href={`/${currentLocale}/projects`}>
                             {/* Add locale */}
-                            Proyectos {/* TODO: Use dictionary */}
+                            {routes[currentLocale].find((route) => route.key === 'projects')?.title}
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
@@ -116,8 +113,8 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             className={navLinkClasses}
                             color='foreground'
                             isExternal
-                            href='https://github.com/washopilot/portfolio-nextui'>
-                            Código&nbsp;
+                            href={routes[currentLocale].find((route) => route.key === 'code')?.path}>
+                            {routes[currentLocale].find((route) => route.key === 'code')?.title}&nbsp;
                         </Link>
                     </NavbarItem>
                 </ul>
@@ -161,23 +158,29 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                 />
             </NavbarContent>
 
-            {/* <NavbarMenu className='pt-4'>
-                {routes.map(
+            <NavbarMenu>
+                {routes[currentLocale].map(
                     (item, index) =>
-                        item.path && ( // Check if item.path exists
+                        item.path && (
                             <NavbarMenuItem key={`${item.path}-${index}`}>
                                 <Link
-                                    color={pathname === `/${currentLocale}${item.path}` ? 'danger' : 'foreground'} // Compare with full locale path
+                                    color={pathname === `/${currentLocale}${item.path}` ? 'danger' : 'foreground'}
                                     className='pt-1 font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
-                                    href={`/${currentLocale}${item.path.startsWith('/') ? item.path : '/' + item.path}`} // Add locale
-                                    size='lg' // Moved size prop here
-                                >
+                                    href={
+                                        item.key === 'code'
+                                            ? item.path
+                                            : `/${currentLocale}${
+                                                  item.path.startsWith('/') ? item.path : '/' + item.path
+                                              }`
+                                    }
+                                    isExternal={item.key === 'code'}
+                                    size='lg'>
                                     {item.title}
                                 </Link>
                             </NavbarMenuItem>
                         )
                 )}
-            </NavbarMenu> */}
+            </NavbarMenu>
         </NextUINavbar>
     )
 }

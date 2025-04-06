@@ -9,12 +9,17 @@
             {
                 "key": "about",
                 "title": "Acerca de",
-                "path": "/acerca"
+                "path": "/about"
             },
             {
                 "key": "projects",
                 "title": "Proyectos",
-                "path": "/proyectos"
+                "path": "/projects"
+            },
+            {
+                "key": "code",
+                "title": "Código",
+                "path": "https://github.com/washopilot/portfolio-nextui"
             }
         ],
         "en": [
@@ -32,6 +37,11 @@
                 "key": "projects",
                 "title": "Projects",
                 "path": "/projects"
+            },
+            {
+                "key": "code",
+                "title": "Code",
+                "path": "https://github.com/washopilot/portfolio-nextui"
             }
         ]
     }
