@@ -31,6 +31,7 @@ export const LanguageSwitch = ({ className }: LanguageSwitchProps) => {
         const pathWithoutLocale = i18n.locales.includes(paths[1] as Locale) ? paths.slice(2).join('/') : pathname
 
         router.push(`/${locale}/${pathWithoutLocale}`)
+        document.cookie = `NEXT_LOCALE=${locale};path=/;max-age=31536000;SameSite=Lax` // Set cookie
     }
 
     const toggleLanguage = () => {

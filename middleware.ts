@@ -1,10 +1,16 @@
-import { i18n } from '@/i18n-config'
+import { i18n, Locale } from '@/i18n-config' // Import Locale
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 function getLocale(request: NextRequest): string | undefined {
+    // Check for locale cookie first
+    const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
+    if (cookieLocale && i18n.locales.includes(cookieLocale as Locale)) {
+        return cookieLocale
+    }
+
     // Negotiator expects plain object so we need to transform headers
     const negotiatorHeaders: Record<string, string> = {}
     request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))

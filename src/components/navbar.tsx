@@ -2,17 +2,18 @@
 
 import { GithubIcon, XIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
+import { i18n, Locale } from '@/i18n-config' // Import i18n and Locale
 import { Route } from '@/libs/page'
 import {
     Link,
+    link,
     NavbarBrand,
     NavbarContent,
     NavbarItem,
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
-    Navbar as NextUINavbar,
-    link
+    Navbar as NextUINavbar
 } from '@heroui/react'
 import { clsx } from 'clsx'
 import { includes } from 'lodash'
@@ -34,7 +35,14 @@ export interface NavbarProps {
 const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false)
 
+    // --- Get current locale from pathname ---
     const pathname = usePathname()
+    const getLocaleFromPath = (path: string): Locale => {
+        const segments = path.split('/')
+        return (i18n.locales.includes(segments[1] as Locale) ? segments[1] : i18n.defaultLocale) as Locale
+    }
+    const currentLocale = getLocaleFromPath(pathname)
+    // --- End get current locale ---
     const navLinkClasses = clsx(
         link({ color: 'foreground' }),
         'data-[active=true]:text-danger data-[active=true]:font-bold data-[active=true]:after:scale-x-100',
@@ -63,7 +71,8 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                     <NextLink
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'
-                        href='/'>
+                        href={`/${currentLocale}`}>
+                        {/* Add locale */}
                         <LargeLogo className='w-auto h-10 md:hidden' />
                         <LargeLogo className='hidden md:block h-5 md:h-12 w-auto' />
                     </NextLink>
@@ -71,7 +80,11 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
 
                 <ul className='hidden lg:flex gap-4 justify-start items-center px-2'>
                     <NavbarItem>
-                        <NextLink className={navLinkClasses} color='foreground' data-active={pathname == '/'} href='/'>
+                        <NextLink
+                            className={navLinkClasses}
+                            color='foreground'
+                            data-active={pathname === `/${currentLocale}`}
+                            href={`/${currentLocale}`}>
                             Inicio
                         </NextLink>
                     </NavbarItem>
@@ -80,8 +93,9 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             className={navLinkClasses}
                             color='foreground'
                             data-active={includes(pathname, 'about')}
-                            href='/about'>
-                            Acerca
+                            href={`/${currentLocale}/about`}>
+                            {/* Add locale */}
+                            Acerca {/* TODO: Use dictionary */}
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
@@ -89,8 +103,9 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
                             className={navLinkClasses}
                             color='foreground'
                             data-active={includes(pathname, 'projects')}
-                            href='/projects'>
-                            Proyectos
+                            href={`/${currentLocale}/projects`}>
+                            {/* Add locale */}
+                            Proyectos {/* TODO: Use dictionary */}
                         </NextLink>
                     </NavbarItem>
                     <NavbarItem>
@@ -146,17 +161,21 @@ const Navbar = ({ children, routes, mobileRoutes = [], slug, tag }: NavbarProps)
             </NavbarContent>
 
             <NavbarMenu className='pt-4'>
-                {routes.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            color={pathname === item.path ? 'danger' : 'foreground'}
-                            className='pt-1 font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
-                            href={item.path}
-                            size='lg'>
-                            {item.title}
-                        </Link>
-                    </NavbarMenuItem>
-                ))}
+                {routes.map(
+                    (item, index) =>
+                        item.path && ( // Check if item.path exists
+                            <NavbarMenuItem key={`${item.path}-${index}`}>
+                                <Link
+                                    color={pathname === `/${currentLocale}${item.path}` ? 'danger' : 'foreground'} // Compare with full locale path
+                                    className='pt-1 font-bold w-full relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-current after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left'
+                                    href={`/${currentLocale}${item.path.startsWith('/') ? item.path : '/' + item.path}`} // Add locale
+                                    size='lg' // Moved size prop here
+                                >
+                                    {item.title}
+                                </Link>
+                            </NavbarMenuItem>
+                        )
+                )}
             </NavbarMenu>
         </NextUINavbar>
     )
