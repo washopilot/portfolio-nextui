@@ -1,8 +1,9 @@
 'use client'
 
+import { i18n, Locale } from '@/i18n-config' // Import i18n and Locale
 import { Card, CardBody, CardHeader, Image, Link } from '@heroui/react'
 import { Project } from 'contentlayer/generated'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation' // Import usePathname
 import { MouseEvent, useCallback, useState } from 'react'
 
 // Utility function for throttling
@@ -20,9 +21,18 @@ function throttle<T extends (...args: any[]) => any>(func: T, delay: number): (.
 const ProjectCard = ({ project }: { project: Project }) => {
     const [rotate, setRotate] = useState({ x: 0, y: 0 })
     const router = useRouter()
+    const pathname = usePathname() // Get pathname
+
+    // --- Get current locale from pathname ---
+    const getLocaleFromPath = (path: string): Locale => {
+        const segments = path.split('/')
+        return (i18n.locales.includes(segments[1] as Locale) ? segments[1] : i18n.defaultLocale) as Locale
+    }
+    const currentLocale = getLocaleFromPath(pathname)
+    // --- End get current locale ---
 
     const handlePress = () => {
-        if (project.url) router.push(project.url)
+        if (project.url) router.push(`/${currentLocale}${project.url}`) // Add locale
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,7 +71,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
             onMouseLeave={onMouseLeave}
             style={cardStyle}>
             <CardHeader>
-                <Link className='text-secondary-500 font-semibold' href={project.url} size='lg' underline='hover'>
+                <Link
+                    className='text-secondary-500 font-semibold'
+                    href={`/${currentLocale}${project.url}`}
+                    size='lg'
+                    underline='hover'>
+                    {/* Add locale */}
                     {project.title}
                 </Link>
             </CardHeader>
