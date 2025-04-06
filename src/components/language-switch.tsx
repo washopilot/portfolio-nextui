@@ -1,5 +1,6 @@
 'use client'
 
+import { GlobeIcon } from '@/components/icons'
 import { i18n, Locale } from '@/i18n-config'
 import { clsx } from '@heroui/shared-utils'
 import { usePathname, useRouter } from 'next/navigation'
@@ -43,20 +44,18 @@ export const LanguageSwitch = ({ className }: LanguageSwitchProps) => {
         <button
             onClick={toggleLanguage}
             className={clsx(
-                'w-auto h-auto',
-                'bg-transparent',
+                'p-1 w-8 h-8 transition-opacity hover:opacity-80 cursor-pointer', // Adjusted classes similar to ThemeSwitch
                 'flex items-center justify-center',
-                'group-data-[selected=true]:bg-transparent',
                 '!text-default-600 dark:!text-default-500',
-                'pt-px',
-                'px-0',
-                'mx-2',
-                'uppercase',
-                'font-bold',
-                'text-2xl',
+                'relative', // Added for positioning the subscript
                 className
             )}>
-            {currentLocale}
+            <GlobeIcon size={22} />
+            <span
+                className='absolute bottom-0 right-0 text-sm font-bold uppercase'
+                style={{ lineHeight: '1', transform: 'translate(25%, 25%)' }}>
+                {currentLocale}
+            </span>
         </button>
     )
 }
