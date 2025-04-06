@@ -1,6 +1,8 @@
 {
     "home": {
-        "title": "Hola, mi nombre es Fernando en Español",
-        "description": "Soy un Desarrollador Full-Stack, Artista Digital y Diseñador, especialista en&nbsp;<strong>Laravel y React</strong>"
+        "title": "Hola, mi nombre es Fernando",
+        "description": "Soy un Desarrollador Full-Stack, Artista Digital y Diseñador, con especialidad en Laravel y React",
+        "more_link_title": "¿Quieres saber más?",
+        "cta_title": "MIS PROYECTOS"
     }
 }

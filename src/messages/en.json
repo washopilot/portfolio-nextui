@@ -1,6 +1,8 @@
 {
     "home": {
-        "title": "Hi, my name is Fernando in English",
-        "description": "I’m a Full-Stack Developer, Digital Artist, and Designer, specialized in <strong>Laravel and React</strong>."
+        "title": "Hi, my name is Fernando",
+        "description": "I’m a Full-Stack Developer, Digital Artist, and Designer, specialized in Laravel and React",
+        "more_link_title": "Do you want to know more?",
+        "cta_title": "MY PROJECTS"
     }
 }
