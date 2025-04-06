@@ -6,14 +6,18 @@ import { allProjects } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
+    // Generate params for each project in each language
     return allProjects.map((project) => ({
-        slug: project._raw.flattenedPath
+        lang: project.lang, // Use the computed lang field
+        slug: project.slug // Use the computed slug field
     }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-    const project = allProjects.find((project) => project._raw.flattenedPath === params.slug)
-    if (!project) notFound()
+export default function ProjectPage({ params }: { params: { slug: string; lang: string } }) {
+    // Add lang to params
+    // Find the project matching both slug and lang
+    const project = allProjects.find((project) => project.slug === params.slug && project.lang === params.lang)
+    if (!project) notFound() // If no project matches, return 404
 
     // console.log(project)
 

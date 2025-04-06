@@ -28,7 +28,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
     // --- End get current locale ---
 
     const handlePress = () => {
-        if (project.url) router.push(`/${currentLocale}${project.url}`) // Add locale
+        if (project.url) router.push(project.url) // Use project.url directly
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,7 +69,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <CardHeader>
                 <Link
                     className='text-secondary-500 font-semibold'
-                    href={`/${currentLocale}${project.url}`}
+                    href={project.url} // Use project.url directly
                     size='lg'
                     underline='hover'>
                     {/* Add locale */}

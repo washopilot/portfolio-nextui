@@ -3,8 +3,10 @@ import { ProjectList } from '@/components/project-list'
 import { allProjects } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 
-export default function ProjectsPage() {
+export default function ProjectsPage({ params }: { params: { lang: string } }) {
+    // Add lang to params
     const projects = allProjects
+        .filter((project) => project.lang === params.lang) // Filter by language
         .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
         ?.filter((post) => {
             if (post.draft) {
