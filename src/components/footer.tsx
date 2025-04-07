@@ -30,11 +30,11 @@ export const Footer = () => {
                         {footerMessages.message}
                     </ReactMarkdown>
                 </article>
-                <article className='text-sm text-default-400'>
+                <article className='text-xs text-default-400'>
                     <ReactMarkdown
                         components={{
                             a: ({ node, ...props }) => (
-                                <Link isExternal href={props.href}>
+                                <Link isExternal href={props.href} size='sm'>
                                     {props.children}
                                 </Link>
                             )
