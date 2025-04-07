@@ -1,10 +1,12 @@
 {
-    "footerMessage": {
+    "footerMessages": {
         "es": {
-            "message": "Con el soporte de"
+            "message": "Con el soporte de [HeroUI](https://www.heroui.com), [NextJs](https://nextjs.org/), [ReactThreeFiber](https://r3f.docs.pmnd.rs) & [ContentLayer2](https://contentlayer.dev)",
+            "gratitude": "Especial agradecimiento al [Proyecto HeroUI](https://github.com/heroui-inc/heroui) y el [portafolio de Takuya Matsuyama](https://www.craftz.dog/)"
         },
         "en": {
-            "message": "With the support of"
+            "message": "With the support of [HeroUI](https://www.heroui.com), [NextJs](https://nextjs.org/), [ReactThreeFiber](https://r3f.docs.pmnd.rs) & [ContentLayer2](https://contentlayer.dev)",
+            "gratitude": "Special thanks to the [HeroUI project](https://github.com/heroui-inc/heroui) and [Takuya Matsuyama's portfolio](https://www.craftz.dog/)"
         }
     }
 }
