@@ -4,5 +4,10 @@
         "description": "I’m a Full-Stack Developer, Digital Artist, and Designer, specialized in **Laravel and React**",
         "more_link_title": "Do you want to know more?",
         "cta_title": "MY PROJECTS"
+    },
+    "about": {
+        "profile_subtitle": "Developer / Artist / Designer",
+        "paragraph_title": "About Me",
+        "paragraph_content": "I am a passionate freelance developer with over four years of experience in web and mobile development. Throughout my career, I have delivered high-quality projects for a variety of clients, using a versatile tech stack across both frontend and backend. My expertise is focused on **Laravel and React**, but I am always eager to learn and adopt new technologies. I have worked with multiple clients in my home country, Ecuador, which has allowed me to gain valuable experience and a deep understanding of best practices in web development.  \nMy commitment to excellence and continuous improvement drives me to deliver innovative and efficient solutions in every project. I am passionate about learning new tools and technologies, collaborating with teams, and solving complex challenges. Effective communication, collaboration, and analytical thinking are key to my approach. Let's build something amazing together!  \nI love what I do and am always looking for new ways to grow and improve. Client satisfaction is my top priority, and I take pride in creating efficient, scalable, and visually impactful solutions. If you're looking for a dedicated professional with great potential, I'm the right person for the job. [... my CV](/resume.pdf)"
     }
 }
