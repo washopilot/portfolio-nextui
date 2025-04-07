@@ -2,8 +2,8 @@
 
 import { GithubIcon, XIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
-import { Route, RoutesByLanguage } from '@/libs/page'
-import { getLocaleFromPath } from '@/utils' // Import the utility function
+import { RoutesByLanguage } from '@/libs/page'
+import { getLocaleFromPath } from '@/utils'; // Import the utility function
 import {
     Link,
     link,
@@ -19,7 +19,7 @@ import { clsx } from 'clsx'
 import { includes } from 'lodash'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LargeLogo } from './home/logo'
 import { LanguageSwitch } from './language-switch'
 import { ThemeSwitch } from './theme-switch'
