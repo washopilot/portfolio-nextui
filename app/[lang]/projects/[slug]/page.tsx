@@ -2,6 +2,8 @@
 import mdxComponents from '@/components/mdx-components' // Importa los componentes personalizados
 import MDXContent from '@/components/mdx-content'
 import ProjectBreadcrum from '@/components/project-breadcrum'
+import { getDictionary } from '@/get-dictionaries'
+import { Locale } from '@/i18n-config'
 import { allProjects } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
@@ -13,7 +15,9 @@ export async function generateStaticParams() {
     }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string; lang: string } }) {
+export default async function ProjectPage({ params }: { params: { slug: string; lang: Locale } }) {
+    const { single_project_page } = await getDictionary(params.lang)
+
     // Add lang to params
     // Find the project matching both slug and lang
     const project = allProjects.find((project) => project.slug === params.slug && project.lang === params.lang)
@@ -23,7 +27,11 @@ export default function ProjectPage({ params }: { params: { slug: string; lang: 
 
     return (
         <article className='flex text-sm max-w-lg mx-auto pt-16 flex-col gap-4 sm:gap-4 md:gap-6 text-justify hyphens-auto leading-normal'>
-            <ProjectBreadcrum projectTitle={project.title} projectYear={project.year} />
+            <ProjectBreadcrum
+                breadcrum_title={single_project_page.breadcrum_title}
+                projectTitle={project.title}
+                projectYear={project.year}
+            />
             <MDXContent code={project.body.code} components={mdxComponents} />
         </article>
     )

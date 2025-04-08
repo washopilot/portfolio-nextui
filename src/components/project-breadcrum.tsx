@@ -1,15 +1,17 @@
 'use client'
 
-import { getLocaleFromPath } from '@/utils' // Import the utility function
+import { getLocaleFromPath } from '@/utils'
 import { BreadcrumbItem, Breadcrumbs, Chip } from '@heroui/react'
 import clsx from 'clsx'
 import NextLink from 'next/link'
-import { usePathname } from 'next/navigation' // Import usePathname
+import { usePathname } from 'next/navigation'
 
 export default function ProjectBreadcrum({
+    breadcrum_title,
     projectTitle,
     projectYear
 }: {
+    breadcrum_title: string
     projectTitle: string
     projectYear?: string
 }) {
@@ -25,8 +27,7 @@ export default function ProjectBreadcrum({
         <Breadcrumbs size='lg'>
             <BreadcrumbItem>
                 <NextLink href={`/${currentLocale}/projects`} className={navLinkClasses}>
-                    {/* Add locale */}
-                    Proyectos
+                    {breadcrum_title}
                 </NextLink>
             </BreadcrumbItem>
             <BreadcrumbItem className='font-bold'>

@@ -7,12 +7,12 @@ import { Link } from '@heroui/react'
 import ReactMarkdown from 'react-markdown'
 
 const AboutPage = async ({ params: { lang } }: { params: { lang: Locale } }) => {
-    const { about } = await getDictionary(lang) // en
+    const { about_page } = await getDictionary(lang) // en
 
     return (
         <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-12 text-justify hyphens-auto leading-normal'>
-            <Profile profilePic={profilePic} title='Fernando Chicaiza' subtitle={about.profile_subtitle} />
-            <Paragraph title={about.paragraph_01_title}>
+            <Profile profilePic={profilePic} title='Fernando Chicaiza' subtitle={about_page.profile_subtitle} />
+            <Paragraph title={about_page.paragraph_01_title}>
                 <ReactMarkdown
                     components={{
                         a: ({ node, ...props }) => (
@@ -26,14 +26,14 @@ const AboutPage = async ({ params: { lang } }: { params: { lang: Locale } }) => 
                             </Link>
                         )
                     }}>
-                    {about.paragraph_01_content}
+                    {about_page.paragraph_01_content}
                 </ReactMarkdown>
             </Paragraph>
-            <Paragraph title={about.paragraph_02_title}>
-                <ReactMarkdown>{about.paragraph_02_content}</ReactMarkdown>
+            <Paragraph title={about_page.paragraph_02_title}>
+                <ReactMarkdown>{about_page.paragraph_02_content}</ReactMarkdown>
             </Paragraph>
-            <Paragraph title={about.paragraph_03_title}>
-                <ReactMarkdown>{about.paragraph_03_content}</ReactMarkdown>
+            <Paragraph title={about_page.paragraph_03_title}>
+                <ReactMarkdown>{about_page.paragraph_03_content}</ReactMarkdown>
             </Paragraph>
         </article>
     )
