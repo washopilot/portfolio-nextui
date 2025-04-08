@@ -12,7 +12,7 @@ const AboutPage = async ({ params: { lang } }: { params: { lang: Locale } }) => 
     return (
         <article className='flex w-full pt-16 flex-col gap-8 sm:gap-10 md:gap-12 text-justify hyphens-auto leading-normal'>
             <Profile profilePic={profilePic} title='Fernando Chicaiza' subtitle={about.profile_subtitle} />
-            <Paragraph title={about.paragraph_title}>
+            <Paragraph title={about.paragraph_01_title}>
                 <ReactMarkdown
                     components={{
                         a: ({ node, ...props }) => (
@@ -26,14 +26,15 @@ const AboutPage = async ({ params: { lang } }: { params: { lang: Locale } }) => 
                             </Link>
                         )
                     }}>
-                    {about.paragraph_content}
+                    {about.paragraph_01_content}
                 </ReactMarkdown>
             </Paragraph>
-            <Paragraph title='Destrezas y tecnologías'>
-                JavaScript / TypeScript / React / React Native / Next.js / Laravel / PHP / MySQL / HTML5 / CSS /
-                Tailwind / Diseño Responsive & Mobile-First
+            <Paragraph title={about.paragraph_02_title}>
+                <ReactMarkdown>{about.paragraph_02_content}</ReactMarkdown>
             </Paragraph>
-            <Paragraph title='Lenguajes'>Javascript/Typescript, PHP &amp; Python</Paragraph>
+            <Paragraph title={about.paragraph_03_title}>
+                <ReactMarkdown>{about.paragraph_03_content}</ReactMarkdown>
+            </Paragraph>
         </article>
     )
 }
