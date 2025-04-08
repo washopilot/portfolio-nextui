@@ -33,6 +33,7 @@ export const siteConfig = {
     },
     links: {
         github: 'https://github.com/washopilot',
-        twitter: 'https://x.com/washopilot'
+        twitter: 'https://x.com/washopilot',
+        linkedin: 'https://www.linkedin.com/in/fernando-chicaiza-cruz'
     }
 }

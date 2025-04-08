@@ -1,9 +1,9 @@
 'use client'
 
-import { GithubIcon, XIcon } from '@/components/icons'
+import { GithubIcon, LinkedInIcon, XIcon } from '@/components/icons'
 import { siteConfig } from '@/config/site'
 import { RoutesByLanguage } from '@/libs/page'
-import { getLocaleFromPath } from '@/utils'; // Import the utility function
+import { getLocaleFromPath } from '@/utils' // Import the utility function
 import {
     Link,
     link,
@@ -120,12 +120,7 @@ const Navbar = ({ routes }: NavbarProps) => {
                 </ul>
             </NavbarContent>
 
-            <NavbarContent className='flex w-full gap-2 sm:hidden' justify='end'>
-                <NavbarItem className='flex h-full items-center'>
-                    <Link isExternal aria-label='Github' className='p-1' href={siteConfig.links.github}>
-                        <GithubIcon className='text-default-600 dark:text-default-500' />
-                    </Link>
-                </NavbarItem>
+            <NavbarContent className='flex w-full gap-3 sm:hidden' justify='end'>
                 <NavbarItem className='flex h-full items-center'>
                     <ThemeSwitch />
                     <LanguageSwitch />
@@ -141,11 +136,14 @@ const Navbar = ({ routes }: NavbarProps) => {
             <NavbarContent className='hidden sm:flex basis-1/5 sm:basis-full' justify='end'>
                 {/* <NavbarItem className='hidden sm:flex'></NavbarItem> */}
                 <NavbarItem className='hidden sm:flex'>
-                    <Link isExternal aria-label='X' className='p-1' href={siteConfig.links.twitter}>
+                    <Link isExternal aria-label='X' className='px-1' href={siteConfig.links.twitter}>
                         <XIcon className='text-default-600 dark:text-default-500' />
                     </Link>
-                    <Link isExternal aria-label='Github' className='p-1' href={siteConfig.links.github}>
+                    <Link isExternal aria-label='Github' className='px-1' href={siteConfig.links.github}>
                         <GithubIcon className='text-default-600 dark:text-default-500' />
+                    </Link>
+                    <Link isExternal aria-label='LinkedIn' className='px-1 pr-5' href={siteConfig.links.linkedin}>
+                        <LinkedInIcon className='text-default-600 dark:text-default-500' />
                     </Link>
                     <ThemeSwitch />
                     <LanguageSwitch />
