@@ -142,7 +142,7 @@ const Navbar = ({ routes }: NavbarProps) => {
                     <Link isExternal aria-label='Github' className='px-1' href={siteConfig.links.github}>
                         <GithubIcon className='text-default-600 dark:text-default-500' />
                     </Link>
-                    <Link isExternal aria-label='LinkedIn' className='px-1 pr-5' href={siteConfig.links.linkedin}>
+                    <Link isExternal aria-label='LinkedIn' className='px-1' href={siteConfig.links.linkedin}>
                         <LinkedInIcon className='text-default-600 dark:text-default-500' />
                     </Link>
                     <ThemeSwitch />

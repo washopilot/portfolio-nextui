@@ -15,6 +15,7 @@ export const ThemeSwitch = () => {
 
     return (
         <Switch
+            className='md:mx-5 mx-2'
             isSelected={!isSSR && theme === 'light'}
             aria-label={`Switch to ${isSSR ? 'dark' : theme === 'light' ? 'dark' : 'light'} mode`}
             onChange={onChange}
