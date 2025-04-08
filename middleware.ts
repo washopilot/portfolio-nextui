@@ -32,7 +32,11 @@ export function middleware(request: NextRequest) {
 
     // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
     // // If you have one
-    if (['/123-transformed.glb', '/resume.pdf'].includes(pathname) || pathname.startsWith('/works/')) return
+    if (
+        ['/123-transformed.glb', '/resume_en.pdf', '/resume_es.pdf'].includes(pathname) ||
+        pathname.startsWith('/works/')
+    )
+        return
 
     // Check if there is any supported locale in the pathname
     const pathnameIsMissingLocale = i18n.locales.every(
