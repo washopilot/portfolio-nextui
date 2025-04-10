@@ -1,4 +1,4 @@
-import BgLeftSVG from '@/components/bg-left'
+import BgLeftSVG from '@/components/layout/bg-left'
 import { SmallLogo } from '@/components/home/logo'
 
 const BackgroundSVG = () => {

@@ -1,7 +1,8 @@
-import BackgroundSVG from '@/components/bg-svg'
-import { Footer } from '@/components/footer'
 import Hero from '@/components/home/hero'
-import Navbar from '@/components/navbar'
+import AnimateLayout from '@/components/layout/animate-layout'
+import BackgroundSVG from '@/components/layout/bg-svg'
+import { Footer } from '@/components/layout/footer'
+import Navbar from '@/components/layout/navbar'
 import { google_font } from '@/config/fonts'
 import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
@@ -31,7 +32,7 @@ export default function RootLayout({
                     <Navbar routes={manifest.routes} />
                     <main className='container mx-auto max-w-3xl px-6 flex flex-col justify-center'>
                         <Hero />
-                        {children}
+                        <AnimateLayout>{children}</AnimateLayout>
                     </main>
                     <Footer />
                     <BackgroundSVG />
