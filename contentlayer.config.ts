@@ -35,4 +35,4 @@ export const Project = defineDocumentType(() => ({
     }
 }))
 
-export default makeSource({ contentDirPath: './src/projects', documentTypes: [Project] })
+export default makeSource({ contentDirPath: './src/content', documentTypes: [Project] })
