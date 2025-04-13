@@ -67,6 +67,7 @@ const Navbar = ({ routes }: NavbarProps) => {
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
                 <NavbarBrand className='gap-3 max-w-fit transition-all duration-300 ease-in-out hover:drop-shadow-[0_2px_2px_hsl(var(--heroui-foreground))]'>
                     <NextLink
+                        scroll={false}
                         aria-label='Home'
                         className='flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50'
                         href={`/${currentLocale}`}>
@@ -79,6 +80,7 @@ const Navbar = ({ routes }: NavbarProps) => {
                 <ul className='hidden lg:flex gap-4 justify-start items-center px-2'>
                     <NavbarItem>
                         <NextLink
+                            scroll={false}
                             className={navLinkClasses}
                             color='foreground'
                             data-active={pathname === `/${currentLocale}`}
@@ -88,6 +90,7 @@ const Navbar = ({ routes }: NavbarProps) => {
                     </NavbarItem>
                     <NavbarItem>
                         <NextLink
+                            scroll={false}
                             className={navLinkClasses}
                             color='foreground'
                             data-active={includes(pathname, 'about')}
@@ -98,6 +101,7 @@ const Navbar = ({ routes }: NavbarProps) => {
                     </NavbarItem>
                     <NavbarItem>
                         <NextLink
+                            scroll={false}
                             className={navLinkClasses}
                             color='foreground'
                             data-active={includes(pathname, 'projects')}
