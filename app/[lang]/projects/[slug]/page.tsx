@@ -2,28 +2,28 @@
 import mdxComponents from '@/components/mdx-components' // Importa los componentes personalizados
 import MDXContent from '@/components/mdx-content'
 import ProjectBreadcrum from '@/components/project-breadcrum'
-import { getDictionary } from '@/get-dictionaries'
 import { Locale } from '@/i18n-config'
-import { allProjects } from 'contentlayer/generated'
+import { allMessages, allProjects } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-    // Generate params for each project in each language
     return allProjects.map((project) => ({
-        lang: project.lang, // Use the computed lang field
-        slug: project.slug // Use the computed slug field
+        lang: project.lang,
+        slug: project.slug
     }))
 }
 
 export default async function ProjectPage({ params }: { params: { slug: string; lang: Locale } }) {
-    const { single_project_page } = await getDictionary(params.lang)
+    const messages = allMessages.find((msg) => msg.lang === params.lang)
 
-    // Add lang to params
-    // Find the project matching both slug and lang
+    if (!messages) {
+        notFound()
+    }
+
+    const { single_project_page } = messages
+
     const project = allProjects.find((project) => project.slug === params.slug && project.lang === params.lang)
-    if (!project) notFound() // If no project matches, return 404
-
-    // console.log(project)
+    if (!project) notFound()
 
     return (
         <article className='flex text-sm max-w-lg mx-auto pt-16 flex-col gap-4 sm:gap-4 md:gap-6 text-justify hyphens-auto leading-normal'>

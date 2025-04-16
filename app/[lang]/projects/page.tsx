@@ -1,12 +1,18 @@
 import Paragraph from '@/components/home/paragraph'
 import { ProjectList } from '@/components/project-list'
-import { getDictionary } from '@/get-dictionaries'
 import { Locale } from '@/i18n-config'
-import { allProjects } from 'contentlayer/generated'
+import { allMessages, allProjects } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
+import { notFound } from 'next/navigation'
 
 export default async function ProjectsPage({ params: { lang } }: { params: { lang: Locale } }) {
-    const { projects_page } = await getDictionary(lang)
+    const messages = allMessages.find((msg) => msg.lang === lang)
+
+    if (!messages) {
+        notFound()
+    }
+
+    const { projects_page } = messages
 
     // Add lang to params
     const projects = allProjects

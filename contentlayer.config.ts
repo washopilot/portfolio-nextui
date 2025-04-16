@@ -1,5 +1,62 @@
 // contentlayer.config.ts
-import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
+import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files'
+
+// Define nested types for the JSON structure
+const HomePage = defineNestedType(() => ({
+    name: 'HomePage',
+    fields: {
+        title: { type: 'string', required: true },
+        description: { type: 'markdown', required: true },
+        more_link_title: { type: 'string', required: true },
+        cta_title: { type: 'string', required: true }
+    }
+}))
+
+const AboutPage = defineNestedType(() => ({
+    name: 'AboutPage',
+    fields: {
+        profile_subtitle: { type: 'string', required: true },
+        paragraph_01_title: { type: 'string', required: true },
+        paragraph_01_content: { type: 'mdx', required: true },
+        paragraph_02_title: { type: 'string', required: true },
+        paragraph_02_content: { type: 'mdx', required: true },
+        paragraph_03_title: { type: 'string', required: true },
+        paragraph_03_content: { type: 'mdx', required: true }
+    }
+}))
+
+const ProjectsPage = defineNestedType(() => ({
+    name: 'ProjectsPage',
+    fields: {
+        title: { type: 'string', required: true }
+    }
+}))
+
+const SingleProjectPage = defineNestedType(() => ({
+    name: 'SingleProjectPage',
+    fields: {
+        breadcrum_title: { type: 'string', required: true }
+    }
+}))
+
+// Define the main document type for the JSON message files
+export const Messages = defineDocumentType(() => ({
+    name: 'Messages',
+    filePathPattern: `messages/(en|es).json`,
+    contentType: 'data',
+    fields: {
+        home_page: { type: 'nested', of: HomePage, required: true },
+        about_page: { type: 'nested', of: AboutPage, required: true },
+        projects_page: { type: 'nested', of: ProjectsPage, required: true },
+        single_project_page: { type: 'nested', of: SingleProjectPage, required: true }
+    },
+    computedFields: {
+        lang: {
+            type: 'string',
+            resolve: (doc) => doc._raw.flattenedPath.split('/')[1] // Extract lang (en/es) from filename
+        }
+    }
+}))
 
 export const Project = defineDocumentType(() => ({
     name: 'Project',
@@ -35,4 +92,7 @@ export const Project = defineDocumentType(() => ({
     }
 }))
 
-export default makeSource({ contentDirPath: './src/content', documentTypes: [Project] })
+export default makeSource({
+    contentDirPath: './src/content',
+    documentTypes: [Project, Messages]
+})
