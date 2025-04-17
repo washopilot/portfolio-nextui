@@ -17,7 +17,9 @@ export const metadata: Metadata = {
     keywords: siteConfig.keywords,
     icons: {
         icon: '/favicon.ico'
-    }
+    },
+    openGraph: siteConfig.openGraph,
+    twitter: siteConfig.twitter
 }
 
 export default function RootLayout({

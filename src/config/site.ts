@@ -1,39 +1,39 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-    name: 'Fernando Chicaiza - Portafolio Profesional',
-    description: 'Fernando Chicaiza, Artista digital',
-    // ogImage: 'https://nextui.org/twitter-cards/nextui.jpeg',
+    name: 'Fernando Chicaiza - Professional Portfolio',
+    description: 'Fernando Chicaiza, Digital Artist',
+    ogImage: 'https://fchicaiza.site/logo_card.png',
     author: 'Fernando Chicaiza',
     email: 'washopilot@gmail.com',
-    // siteUrl: 'https://nextui.org',
-    // creator: '@getnextui',
+    siteUrl: 'https://fchicaiza.site',
+    creator: '@getnextui',
     openGraph: {
         type: 'website',
-        locale: 'es_EC',
-        // url: 'https://nextui.org',
-        siteName: 'FernandoChicaiza',
-        description: 'Fernando Chicaiza, Artista digital',
+        locale: 'en_US',
+        url: 'https://fchicaiza.site',
+        siteName: 'Fernando Chicaiza',
+        description: 'Fernando Chicaiza, Digital Artist',
         images: [
-            // {
-            //     url: 'https://nextui.org/twitter-cards/nextui.jpeg',
-            //     width: 1200,
-            //     height: 630,
-            //     alt: 'NextUI'
-            // }
+            {
+                url: 'https://fchicaiza.site/logo_card.png',
+                width: 900,
+                height: 800,
+                alt: 'logocard'
+            }
         ]
     },
     keywords: ['Fernando Chicaiza', 'Portfolio', 'Artist', 'Digital', 'Developer'],
     twitter: {
         card: 'summary_large_image',
         title: 'Fernando Chicaiza',
-        description: 'Civil Engineer - Tech Entusiast - Web Developer',
-        // image: 'https://nextui.org/twitter-cards/nextui.jpeg',
+        description: 'Tech Entusiast - Web Developer',
+        image: 'https://fchicaiza.site/logo_card.png',
         creator: '@washopilot'
     },
     links: {
         github: 'https://github.com/washopilot',
         twitter: 'https://x.com/washopilot',
-        linkedin: 'https://www.linkedin.com/in/fernando-chicaiza-cruz'
+        linkedin: 'https://linkedin.com/in/fernando-chicaiza-cruz'
     }
 }
