@@ -33,7 +33,7 @@ export function middleware(request: NextRequest) {
     // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
     // // If you have one
     if (
-        ['/123-transformed.glb', '/resume_en.pdf', '/resume_es.pdf', '/logo_card.png'].includes(pathname) ||
+        ['/123-transformed.glb', '/resume_en.pdf', '/resume_es.pdf', '/logo_card.jpg'].includes(pathname) ||
         pathname.startsWith('/works/')
     )
         return
