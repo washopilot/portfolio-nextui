@@ -20,7 +20,7 @@ const Profile = ({
             src={profilePic}
             alt='Picture of the author'
             placeholder='blur'
-            className='flex-none object-cover rounded-full w-28 h-28 md:w-36 md:h-36 overflow-hidden border-4 border-foreground'
+            className='flex-none object-cover object-[100%_20%] rounded-full w-[6em] h-[6em] md:w-[7em] md:h-[7em] overflow-hidden border-4 border-foreground'
         />
     </section>
 )
