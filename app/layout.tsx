@@ -1,4 +1,3 @@
-import Hero from '@/components/home/hero'
 import AnimateLayout from '@/components/layout/animate-layout'
 import BackgroundSVG from '@/components/layout/bg-svg'
 import { Footer } from '@/components/layout/footer'
@@ -8,8 +7,11 @@ import manifest from '@/config/routes.json'
 import { siteConfig } from '@/config/site'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import './globals.css'
 import { Providers } from './provider'
+
+const Hero = dynamic(() => import('@/components/home/hero'), { ssr: false })
 
 export const metadata: Metadata = {
     title: siteConfig.name,
